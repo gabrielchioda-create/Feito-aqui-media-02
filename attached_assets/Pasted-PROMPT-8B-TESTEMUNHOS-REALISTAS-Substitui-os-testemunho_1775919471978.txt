@@ -1,0 +1,56 @@
+PROMPT 8B — TESTEMUNHOS REALISTAS
+
+Substitui os testemunhos existentes no carrossel por estes 5:
+
+TESTEMUNHO 1:
+Nome: "Carlos Méndez"
+Cargo: "Chef y propietario"
+Restaurante: "Taberna O Pescador — Vigo"
+Estrelas: ⭐⭐⭐⭐⭐
+Texto: "Llevaba 2 años publicando fotos con el móvil y no pasaba nada. 
+Feito Aqui vino un martes, grabó durante 2 horas y esos vídeos 
+nos trajeron más reservas que 6 meses de lo que hacíamos antes. 
+Ojalá les hubiera llamado antes."
+
+TESTEMUNHO 2:
+Nome: "María Rodríguez"
+Cargo: "Gerente"
+Restaurante: "Pizzería La Strada — Pontevedra"
+Estrelas: ⭐⭐⭐⭐⭐
+Texto: "No teníamos ni Instagram cuando empezamos con ellos. 
+Ahora tenemos 3.200 seguidores y los viernes tenemos que rechazar 
+reservas porque estamos completos. Es otra liga."
+
+TESTEMUNHO 3:
+Nome: "Andrés Vilar"
+Cargo: "Propietario"
+Restaurante: "Asador Don Brasa — Ourense"
+Estrelas: ⭐⭐⭐⭐⭐
+Texto: "Al principio pensé que era caro. Después del primer mes 
+calculé que cada vídeo nos generó más de 40 clientes nuevos. 
+Es la mejor inversión que he hecho en el restaurante."
+
+TESTEMUNHO 4:
+Nome: "Lucía Fernández"
+Cargo: "Co-fundadora"
+Restaurante: "Café Botánico — Santiago"
+Estrelas: ⭐⭐⭐⭐⭐
+Texto: "Lo que más me gustó es que no tuve que hacer NADA. 
+Vinieron, grabaron, y en 5 días tenía contenido profesional 
+para un mes entero. Y mis platos nunca se vieron tan bien."
+
+TESTEMUNHO 5:
+Nome: "Rui Domínguez"
+Cargo: "Chef ejecutivo"
+Restaurante: "Marisquería Atlántico — A Coruña"
+Estrelas: ⭐⭐⭐⭐⭐
+Texto: "Contraté a dos agencias antes y ninguna entendía 
+la hostelería. Estos chicos sí. Saben cuándo grabar, 
+qué platos destacar y cómo hacer que la gente quiera venir. 
+Son uno más del equipo."
+
+REGRAS:
+- Manter a estrutura do carrossel intacta (auto-play, dots, swipe)
+- Cada testemunho deve mostrar: estrelas + texto + nome + cargo + restaurante
+- Se o carrossel só suporta 3, usar os testemunhos 1, 2 e 3 e guardar 4 e 5 como alternativas
+- NÃO alterar mais nada no site

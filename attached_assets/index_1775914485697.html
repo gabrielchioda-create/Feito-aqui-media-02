@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEITO AQUÍ MEDIA | Contenido profesional, hecho en tu barrio</title>
+    <meta name="description" content="Productora de contenido visual en Vigo. Vídeos, fotos y stories profesionales para negocios locales desde 20€. Entrega en 48h.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="FEITO AQUÍ MEDIA | Productora de contenido en Vigo">
+    <meta property="og:description" content="Contenido profesional, hecho en tu barrio. Fotos, vídeos y stories para tu negocio local.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://feitoaquimedia.es">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon Placeholder -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+</head>
+<body>
+
+    <!-- Header / Navegación -->
+    <header id="main-header" class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-bold">FEITO <span class="accent">AQUÍ</span></span> <span class="logo-light">MEDIA</span>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#packs" class="nav-link">Packs</a></li>
+                    <li><a href="#como-funciona" class="nav-link">Cómo Funciona</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/34692231872?text=Hola!%20Quiero%20información%20sobre%20los%20packs%20de%20contenido" class="btn btn-primary btn-header" target="_blank">Pide tu Pack</a>
+                <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="#servicios" class="mobile-link">Servicios</a></li>
+                <li><a href="#packs" class="mobile-link">Packs</a></li>
+                <li><a href="#como-funciona" class="mobile-link">Cómo Funciona</a></li>
+                <li><a href="#faq" class="mobile-link">FAQ</a></li>
+                <li><a href="#blog" class="mobile-link">Blog</a></li>
+                <li><a href="#contacto" class="mobile-link">Contacto</a></li>
+                <li><a href="https://wa.me/34692231872?text=Hola!%20Quiero%20información%20sobre%20los%20packs%20de%20contenido" class="btn btn-primary" target="_blank">Pide tu Pack</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="tag fade-up">📍 Productora de contenido en Vigo</span>
+                    <h1 class="hero-title fade-up" style="animation-delay: 0.1s;">Tu negocio tiene algo bueno. Nosotros lo hacemos visible.</h1>
+                    <p class="hero-subtitle fade-up" style="animation-delay: 0.2s;">Vídeos, fotos y stories profesionales desde 20€. Vamos a tu local, grabamos y en 48h tienes tu contenido listo.</p>
+                    
+                    <div class="hero-btns fade-up" style="animation-delay: 0.3s;">
+                        <a href="https://wa.me/34692231872?text=Hola!%20Quiero%20información%20sobre%20los%20packs%20de%20contenido" class="btn btn-primary btn-lg" target="_blank">Quiero mi Pack</a>
+                        <a href="#packs" class="btn btn-outline btn-lg">Ver Packs y Precios</a>
+                    </div>
+                    
+                    <div class="hero-features fade-up" style="animation-delay: 0.4s;">
+                        <span>✓ Sin compromiso</span>
+                        <span>·</span>
+                        <span>✓ Entrega en 48h</span>
+                        <span>·</span>
+                        <span>✓ Vamos a tu local</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Problema -->
+        <section id="problema" class="problema">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">¿Te suena esto?</span>
+                    <h2 class="section-title">Tu negocio va bien. Tu contenido, no tanto.</h2>
+                    <p class="section-subtitle">La mayoría de negocios en Vigo tienen el mismo problema. Y no es falta de clientes — es falta de visibilidad.</p>
+                </div>
+
+                <div class="problema-cards">
+                    <!-- Card 1: No tienes tiempo -->
+                    <div class="problema-card">
+                        <div class="card-icon">⏰</div>
+                        <h3 class="card-title">No tienes tiempo</h3>
+                        <p class="card-text">Entre el negocio, los proveedores y el día a día, crear contenido para redes es lo último en tu lista. Y cuando lo haces, no queda como quieres.</p>
+                    </div>
+
+                    <!-- Card 2: Tu Instagram no te representa -->
+                    <div class="problema-card">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">Tu Instagram no te representa</h3>
+                        <p class="card-text">Tienes un negocio de 10, pero tu perfil parece de 4. Fotos oscuras, vídeos temblorosos, semanas sin publicar. Tus clientes no te encuentran.</p>
+                    </div>
+
+                    <!-- Card 3: Las agencias son caras -->
+                    <div class="problema-card">
+                        <div class="card-icon">💸</div>
+                        <h3 class="card-title">Las agencias son caras</h3>
+                        <p class="card-text">Has pedido presupuesto y te han dicho 300, 500, 800€ al mes. Para un negocio pequeño, eso no es una inversión — es un lujo que no te puedes permitir.</p>
+                    </div>
+                </div>
+
+                <div class="problema-cta">
+                    <p class="cta-text">Si has dicho 'sí' a alguna de estas, seguí leyendo. 👇</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Solución -->
+        <section id="solucion" class="solucion">
+            <div class="container">
+                <div class="section-header light">
+                    <span class="section-tag accent">La solución</span>
+                    <h2 class="section-title light">Nosotros vamos. Grabamos. Y en 48h tienes todo.</h2>
+                    <p class="section-subtitle light">Sin contratos, sin agencias, sin complicaciones. Contenido profesional al alcance de cualquier negocio en Vigo.</p>
+                </div>
+
+                <div class="solucion-grid">
+                    <!-- Columna izquierda: Beneficios -->
+                    <div class="solucion-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <p>Vamos a tu local — tú no mueves un dedo</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <p>Grabamos vídeos, hacemos fotos y creamos stories</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <p>Editamos todo con calidad profesional</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <p>Te lo entregamos en 1-2 días laborables</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <p>Tú solo publicas y recibes clientes</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <p>Desde 20€. Sí, has leído bien.</p>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha: Imagen -->
+                    <div class="solucion-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800" alt="Grabando contenido en negocio local" class="solucion-img">
+                    </div>
+                </div>
+
+                <div class="solucion-cta">
+                    <a href="#packs" class="btn btn-primary btn-lg">Quiero ver los packs</a>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="social-proof">
+                    <div class="proof-item">
+                        <span class="proof-number">+500</span>
+                        <p>📸 fotos entregadas</p>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-number">+200</span>
+                        <p>🎬 vídeos editados</p>
+                    </div>
+                    <div class="proof-item">
+                        <span class="proof-number">4.9</span>
+                        <p>⭐ valoración media</p>
+                    </div>
+                </div>
+                <p class="proof-disclaimer">Datos de nuestros primeros meses en activo</p>
+            </div>
+        </section>
+
+        <!-- Sección: Packs y Precios -->
+        <section id="packs" class="packs">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Packs de contenido</span>
+                    <h2 class="section-title">Elige tu pack. Empieza desde 20€.</h2>
+                    <p class="section-subtitle">Sin permanencia, sin contratos, sin letra pequeña. Prúbbanos con un pack de entrada y decide tú.</p>
+                </div>
+
+                <!-- Grid de 4 cards de precios -->
+                <div class="packs-grid">
+                    <!-- CARD 1: Pack Prueba -->
+                    <div class="pack-card pack-prueba">
+                        <div class="pack-badge">🔥 PRECIO DE LANZAMIENTO</div>
+                        <h3 class="pack-name">Pack Prueba</h3>
+                        <div class="pack-price">
+                            <span class="price-amount">20€ - 35€</span>
+                            <p class="price-note">pago único · sin compromiso</p>
+                        </div>
+                        <div class="pack-divider"></div>
+                        <ul class="pack-features">
+                            <li><span class="check">✓</span> 3 vídeos cortos (Reels/TikTok)</li>
+                            <li><span class="check">✓</span> 5 fotos profesionales editadas</li>
+                            <li><span class="check">✓</span> 3 stories listos para subir</li>
+                            <li><span class="check">✓</span> Grabación en tu local</li>
+                            <li><span class="check">✓</span> Entrega en 1-2 días laborables</li>
+                        </ul>
+                        <div class="pack-divider"></div>
+                        <p class="pack-highlight"><em>Perfecto para probar sin arriesgar.</em></p>
+                        <a href="https://wa.me/34692231872?text=Hola!%20Quiero%20el%20Pack%20Prueba%20%F0%9F%8E%AC" class="btn btn-primary pack-btn" target="_blank">Pedir Pack Prueba</a>
+                    </div>
+
+                    <!-- CARD 2: Sesión Simple -->
+                    <div class="pack-card pack-simple">
+                        <h3 class="pack-name">Sesión Simple</h3>
+                        <div class="pack-price">
+                            <span class="price-amount">35€ - 60€</span>
+                            <p class="price-note">pago único</p>
+                        </div>
+                        <div class="pack-divider"></div>
+                        <ul class="pack-features">
+                            <li><span class="check">✓</span> 5 vídeos cortos (Reels/TikTok)</li>
+                            <li><span class="check">✓</span> 10 fotos profesionales editadas</li>
+                            <li><span class="check">✓</span> 5 stories listos para subir</li>
+                            <li><span class="check">✓</span> Grabación en tu local (hasta 2h)</li>
+                            <li><span class="check">✓</span> Edición profesional con tu marca</li>
+                            <li><span class="check">✓</span> Entrega en 1-2 días laborables</li>
+                        </ul>
+                        <div class="pack-divider"></div>
+                        <p class="pack-highlight"><em>Para negocios que quieren dar un paso más.</em></p>
+                        <a href="https://wa.me/34692231872?text=Hola!%20Me%20interesa%20la%20Sesi%u00f3n%20Simple%20%F0%9F%93%B8" class="btn btn-primary pack-btn" target="_blank">Pedir Sesión Simple</a>
+                    </div>
+
+                    <!-- CARD 3: Pack Semanal (DESTACADO) -->
+                    <div class="pack-card pack-semanal pack-featured">
+                        <div class="pack-badge badge-popular">⭐ MÁS POPULAR</div>
+                        <h3 class="pack-name">Pack Semanal</h3>
+                        <div class="pack-price">
+                            <span class="price-amount">60€ - 120€</span>
+                            <p class="price-note">por semana</p>
+                        </div>
+                        <div class="pack-divider"></div>
+                        <ul class="pack-features">
+                            <li><span class="check">✓</span> Todo lo de Sesión Simple</li>
+                            <li><span class="check">✓</span> 1 sesión de grabación semanal</li>
+                            <li><span class="check">✓</span> Calendario de publicaciones sugerido</li>
+                            <li><span class="check">✓</span> Contenido variado (producto, local, equipo)</li>
+                            <li><span class="check">✓</span> Entrega continua cada semana</li>
+                            <li><span class="check">✓</span> Ajustes y cambios incluidos</li>
+                        </ul>
+                        <div class="pack-divider"></div>
+                        <p class="pack-highlight"><em>Tu contenido siempre fresco, sin preocuparte de nada.</em></p>
+                        <a href="https://wa.me/34692231872?text=Hola!%20Quiero%20info%20del%20Pack%20Semanal%20%E2%AD%90" class="btn btn-primary pack-btn" target="_blank">Pedir Pack Semanal</a>
+                    </div>
+
+                    <!-- CARD 4: Pack Mensual -->
+                    <div class="pack-card pack-mensual">
+                        <h3 class="pack-name">Pack Mensual</h3>
+                        <div class="pack-price">
+                            <span class="price-amount">120€ - 250€</span>
+                            <p class="price-note">al mes</p>
+                        </div>
+                        <div class="pack-divider"></div>
+                        <ul class="pack-features">
+                            <li><span class="check">✓</span> Todo lo del Pack Semanal</li>
+                            <li><span class="check">✓</span> 4 sesiones de grabación al mes</li>
+                            <li><span class="check">✓</span> Estrategia básica de contenido</li>
+                            <li><span class="check">✓</span> Formatos adaptados a cada red social</li>
+                            <li><span class="check">✓</span> Prioridad en entregas</li>
+                            <li><span class="check">✓</span> Soporte por WhatsApp directo</li>
+                        </ul>
+                        <div class="pack-divider"></div>
+                        <p class="pack-highlight"><em>Para negocios que quieren una presencia profesional constante.</em></p>
+                        <a href="https://wa.me/34692231872?text=Hola!%20Me%20interesa%20el%20Pack%20Mensual%20%F0%9F%9A%80" class="btn btn-primary pack-btn" target="_blank">Pedir Pack Mensual</a>
+                    </div>
+                </div>
+
+                <!-- Comparador rápido -->
+                <div class="packs-helper">
+                    <p class="helper-text">💡 ¿No sabes cuál elegir? Escríbenos y te recomendamos el pack ideal para tu negocio.</p>
+                    <a href="https://wa.me/34692231872?text=Hola!%20No%20s%u00e9%20qu%u00e9%20pack%20me%20conviene.%20%u00bfMe%20ayud%u00e1is?" class="btn btn-helper" target="_blank">Hablar por WhatsApp</a>
+                </div>
+
+                <!-- Elementos de confianza -->
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <p>Sin contratos ni permanencia</p>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⚡</span>
+                        <p>Entrega en 48h o menos</p>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">💬</span>
+                        <p>Atención directa por WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Cómo Funciona -->
+        <section id="como-funciona" class="como-funciona">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Así de fácil</span>
+                    <h2 class="section-title">Tu contenido profesional en 3 pasos</h2>
+                    <p class="section-subtitle">Sin reuniones eternas, sin briefings complicados, sin esperas de semanas.</p>
+                </div>
+
+                <!-- Timeline de pasos -->
+                <div class="timeline-container">
+                    <div class="timeline-line" id="timeline-line"></div>
+                    
+                    <div class="timeline-steps">
+                        <!-- PASO 1 -->
+                        <div class="timeline-step">
+                            <div class="step-circle step-1">
+                                <span class="step-number">01</span>
+                            </div>
+                            <div class="step-icon">💬</div>
+                            <div class="step-card">
+                                <h3 class="step-title">Escríbenos por WhatsApp</h3>
+                                <p class="step-description">Cuéntanos qué tipo de negocio tienes y qué necesitas. Te recomendamos el pack ideal y agendamos la sesión. Así de simple.</p>
+                                <p class="step-time">⏱ Tiempo: 2 minutos</p>
+                            </div>
+                        </div>
+
+                        <!-- PASO 2 -->
+                        <div class="timeline-step">
+                            <div class="step-circle step-2">
+                                <span class="step-number">02</span>
+                            </div>
+                            <div class="step-icon">🎬</div>
+                            <div class="step-card">
+                                <h3 class="step-title">Vamos a tu local y grabamos</h3>
+                                <p class="step-description">Nos desplazamos a tu negocio con todo el equipo. Grabamos vídeos, hacemos fotos y capturamos la esencia de tu local. Tú solo haces lo de siempre.</p>
+                                <p class="step-time">⏱ Tiempo de sesión: 1-2 horas</p>
+                            </div>
+                        </div>
+
+                        <!-- PASO 3 -->
+                        <div class="timeline-step">
+                            <div class="step-circle step-3">
+                                <span class="step-number">03</span>
+                            </div>
+                            <div class="step-icon">✅</div>
+                            <div class="step-card">
+                                <h3 class="step-title">Recibe tu contenido listo</h3>
+                                <p class="step-description">En 24-48 horas te enviamos todo editado, optimizado y listo para publicar. Vídeos, fotos, stories — solo tienes que subirlo.</p>
+                                <p class="step-time">⏱ Entrega: 1-2 días laborables</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA después de los pasos -->
+                <div class="timeline-cta">
+                    <p class="cta-text">¿Listo para empezar? El primer paso es un mensaje.</p>
+                    <a href="https://wa.me/34692231872?text=Hola!%20Quiero%20agendar%20una%20sesi%u00f3n%20de%20contenido%20%F0%9F%93%B8" class="btn btn-primary btn-lg btn-cta" target="_blank">Escribir por WhatsApp ahora</a>
+                    <p class="cta-micro">Respondemos en menos de 1 hora 💬</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Testimonios -->
+        <section id="testimonios" class="testimonios">
+            <div class="container">
+                <div class="section-header light">
+                    <span class="section-tag accent">Lo que dicen nuestros clientes</span>
+                    <h2 class="section-title light">Negocios de Vigo que ya confían en nosotros</h2>
+                    <p class="section-subtitle light">Más contenido, más visibilidad, más clientes.</p>
+                </div>
+
+                <!-- Carrossel de testimonios -->
+                <div class="testimonials-carousel">
+                    <button class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Anterior">‹</button>
+                    
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-track">
+                            <!-- TESTIMONIO 1 -->
+                            <div class="testimonial-card">
+                                <!-- GABRIEL: Substituir este depoimento por un real cuando tengas -->
+                                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                                <div class="testimonial-quote-mark">"</div>
+                                <p class="testimonial-text">Llevaba meses queriendo mejorar el Instagram del restaurante pero no tenía ni tiempo ni idea. Los chicos de Feito Aquí vinieron una mañana, en dos horas tenían todo grabado, y al día siguiente ya tenía 10 vídeos y 20 fotos brutales. ¡Por 20€! Increíble.</p>
+                                <div class="testimonial-divider"></div>
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=12" alt="María G." class="author-avatar">
+                                    <div class="author-info">
+                                        <p class="author-name">María G.</p>
+                                        <p class="author-business">Restaurante Casa María · Casco Vello</p>
+                                    </div>
+                                    <span class="pack-tag">Pack Prueba · 20€</span>
+                                </div>
+                            </div>
+
+                            <!-- TESTIMONIO 2 -->
+                            <div class="testimonial-card">
+                                <!-- GABRIEL: Substituir este depoimento por un real cuando tengas -->
+                                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                                <div class="testimonial-quote-mark">"</div>
+                                <p class="testimonial-text">Tenía el perfil de la barbería medio muerto. Contraté el pack semanal y en un mes pasé de 300 a 1.200 seguidores. Pero lo mejor es que me llegan clientes nuevos cada semana diciendo que me encontraron por Instagram. Se paga solo.</p>
+                                <div class="testimonial-divider"></div>
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=33" alt="Diego R." class="author-avatar">
+                                    <div class="author-info">
+                                        <p class="author-name">Diego R.</p>
+                                        <p class="author-business">Barbería Don Diego · Gran Vía</p>
+                                    </div>
+                                    <span class="pack-tag">Pack Semanal · 90€/semana</span>
+                                </div>
+                            </div>
+
+                            <!-- TESTIMONIO 3 -->
+                            <div class="testimonial-card">
+                                <!-- GABRIEL: Substituir este depoimento por un real cuando tengas -->
+                                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                                <div class="testimonial-quote-mark">"</div>
+                                <p class="testimonial-text">Lo que más me gusta es que no tengo que hacer NADA. Vienen, graban, y en dos días tengo stories, reels y fotos que yo jamás habría podido hacer. Y el trato es cercano, como tiene que ser. Son del barrio y se nota.</p>
+                                <div class="testimonial-divider"></div>
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=47" alt="Laura M." class="author-avatar">
+                                    <div class="author-info">
+                                        <p class="author-name">Laura M.</p>
+                                        <p class="author-business">Floristía Lúa · Travesía de Vigo</p>
+                                    </div>
+                                    <span class="pack-tag">Pack Mensual · 200€/mes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-nav carousel-next" id="carousel-next" aria-label="Siguiente">›</button>
+                </div>
+
+                <!-- Indicadores (dots) -->
+                <div class="carousel-dots" id="carousel-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                </div>
+
+                <!-- Barra de logos -->
+                <div class="logos-section">
+                    <p class="logos-text">Creamos contenido para restaurantes, barberías, cafeterías, tiendas, gimnasios, clínicas y más negocios locales en Vigo.</p>
+                    <div class="logos-marquee">
+                        <div class="logos-track">
+                            <span class="logo-item">🍽️</span>
+                            <span class="logo-item">💈</span>
+                            <span class="logo-item">☕</span>
+                            <span class="logo-item">🛍️</span>
+                            <span class="logo-item">💪</span>
+                            <span class="logo-item">🏥</span>
+                            <span class="logo-item">🌸</span>
+                            <span class="logo-item">🎨</span>
+                            <!-- Duplicados para efecto seamless -->
+                            <span class="logo-item">🍽️</span>
+                            <span class="logo-item">💈</span>
+                            <span class="logo-item">☕</span>
+                            <span class="logo-item">🛍️</span>
+                            <span class="logo-item">💪</span>
+                            <span class="logo-item">🏥</span>
+                            <span class="logo-item">🌸</span>
+                            <span class="logo-item">🎨</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Preguntas frecuentes</span>
+                    <h2 class="section-title">Todo lo que necesitas saber antes de decidirte</h2>
+                    <p class="section-subtitle">Y si no encuentras tu respuesta, escríbenos. Respondemos en menos de 1 hora.</p>
+                </div>
+
+                <!-- Grid de 2 columnas para acordeones -->
+                <div class="faq-grid">
+                    <!-- COLUMNA IZQUIERDA -->
+                    <div class="faq-column" id="faq-column-left">
+                        <!-- P1 -->
+                        <div class="accordion-item open">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Qué incluye exactamente cada pack?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Cada pack incluye la grabación en tu local, edición profesional y entrega de todo el contenido listo para publicar. El Pack Prueba incluye 3 vídeos, 5 fotos y 3 stories. Los demás packs incluyen más contenido y servicios adicionales. Puedes ver el detalle completo en la sección de packs arriba. 👆</p>
+                            </div>
+                        </div>
+                        <!-- P2 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Tengo que preparar algo para la sesión?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Nada especial. Solo que tu negocio esté abierto y funcionando como siempre. Nosotros nos encargamos de todo: ángulos, iluminación, composición. Si quieres, puedes decirnos qué productos o zonas quieres destacar, pero no es obligatorio. Tú haz lo tuyo, nosotros hacemos lo nuestro.</p>
+                            </div>
+                        </div>
+                        <!-- P3 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Cuánto dura la sesión de grabación?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Entre 1 y 2 horas dependiendo del pack. El Pack Prueba suele ser 1 hora. No interrumpimos tu actividad — trabajamos alrededor de tu ritmo normal. Tus clientes ni se enteran.</p>
+                            </div>
+                        </div>
+                        <!-- P4 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿En cuánto tiempo recibo el contenido?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>En 24-48 horas laborables. Grabamos, editamos y te enviamos todo por Google Drive o WeTransfer. Listo para publicar directamente. Sin esperas de semanas como en las agencias.</p>
+                            </div>
+                        </div>
+                        <!-- P5 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Qué tipo de negocios atendéis?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Cualquier negocio local en Vigo y alrededores: restaurantes, bares, cafeterías, barberías, pelquerías, tiendas de ropa, floristérias, gimnasios, clínicas, estudios de tatuaje, inmobiliarias... Si tienes un local y quieres contenido, podemos ayudarte.</p>
+                            </div>
+                        </div>
+                        <!-- P6 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Trabajáis solo en Vigo?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Nuestra base es Vigo, pero nos desplazamos a toda el área metropolitana: Nigrán, Baiona, Gondomar, Redondela, Cangas, Moaña... Si estás cerca, hablamos. El desplazamiento está incluido en el precio dentro de Vigo ciudad.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNA DERECHA -->
+                    <div class="faq-column" id="faq-column-right">
+                        <!-- P7 -->
+                        <div class="accordion-item open">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿De verdad el pack empieza en 20€? ¿Cuál es el truco?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>No hay truco. El Pack Prueba a 20-35€ es real. Lo ofrecemos a ese precio porque sabemos que cuando veas la calidad, vas a querer repetir. Es nuestra forma de demostrarte que esto funciona. Sin compromiso, sin permanencia.</p>
+                            </div>
+                        </div>
+                        <!-- P8 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Hay algún contrato o permanencia?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>No. Cero contratos, cero permanencia, cero letra pequeña. Cada pack se paga de forma individual. Si te gusta, repites. Si no, tan amigos. Así de simple.</p>
+                            </div>
+                        </div>
+                        <!-- P9 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Cómo se paga?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Aceptamos Bizum, transferencia bancaria y efectivo. El pago se realiza una vez agendada la sesión. Sin sorpresas, sin costes ocultos.</p>
+                            </div>
+                        </div>
+                        <!-- P10 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Puedo elegir la música de los vídeos?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>¡Claro! Usamos música libre de derechos optimizada para Reels e TikTok, pero si tienes preferencias, nos lo dices y lo adaptamos. También podemos usar trending audios si prefieres.</p>
+                            </div>
+                        </div>
+                        <!-- P11 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Hacéis la gestión de redes sociales?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>De momento nos centramos en la producción de contenido: grabación, edición y entrega. No gestionamos cuentas ni publicamos por ti. Pero te entregamos todo tan bien organizado que publicar te va a llevar 2 minutos. Si en el futuro lo necesitas, estamos valorando ofrecer ese servicio.</p>
+                            </div>
+                        </div>
+                        <!-- P12 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-title">¿Y si no me gusta el resultado?</span>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Nos importa que quedes 100% satisfecho. Si hay algo que no te convence, lo ajustamos sin coste adicional. Pero te adelantamos que en el 99% de los casos, la reacción es: ‘Hostia, ¡qué pasada!’ 😄</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badge de dúdvidas -->
+                <div class="faq-doubt-badge">
+                    <h3>¿Tienes alguna duda que no está aquí?</h3>
+                    <p>Escríbenos y te la resolvemos en menos de 1 hora. Sin compromiso.</p>
+                    <a href="https://wa.me/34692231872?text=Hola!%20Tengo%20una%20duda%20sobre%20el%20servicio%20de%20contenido%20%F0%9F%A4%94" class="btn btn-primary" target="_blank">Preguntar por WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: CTA Final -->
+        <section id="cta-final" class="cta-final">
+            <!-- Shapes decorativos -->
+            <div class="cta-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+
+            <div class="container cta-final-content">
+                <div class="cta-emoji">🎬</div>
+                <h2 class="cta-title">¿A qué esperas? Tu competencia ya está publicando.</h2>
+                <p class="cta-subtitle">Mientras tú lo piensas, el bar de al lado ya tiene Reels nuevos. No dejes que tu negocio sea invisible.</p>
+                
+                <a href="https://wa.me/34692231872?text=Hola!%20Quiero%20empezar%20con%20mi%20contenido%20profesional%20%F0%9F%9A%80" class="btn btn-cta-final" target="_blank">Quiero mi contenido profesional</a>
+                
+                <p class="cta-micro-text">📈 Solo para negocios en Vigo y alrededores</p>
+                
+                <div class="cta-trust-row">
+                    <span>🔒 Sin contratos</span>
+                    <span>·</span>
+                    <span>⚡ Entrega en 48h</span>
+                    <span>·</span>
+                    <span>💬 Atención directa</span>
+                    <span>·</span>
+                    <span>💰 Desde 20€</span>
+                </div>
+                
+                <p class="cta-final-tagline">— FEITO AQUÍ MEDIA · Contenido profesional, hecho en tu barrio.</p>
+            </div>
+        </section>
+
+        <!-- Sección: Blog / Contenido SEO -->
+        <section id="blog" class="blog">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Blog · Consejos para tu negocio</span>
+                    <h2 class="section-title">Ideas para hacer crecer tu negocio local</h2>
+                    <p class="section-subtitle">Consejos rápidos de marketing digital para negocios de Vigo. Gratis, sin humo, directo al grano.</p>
+                </div>
+
+                <!-- Texto SEO introductorio -->
+                <p class="blog-intro-text">En Feito Aquí Media ayudamos a negocios locales de Vigo a crear contenido profesional: vídeos para restaurantes, reels para tiendas, fotos para barberías y mucho más. Somos tu creador de contenido en Vigo, especializado en marketing digital para negocios locales.</p>
+
+                <!-- Grid de artículos -->
+                <div class="blog-grid">
+                    <!-- ARTÍCULO 1 -->
+                    <article class="blog-card">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #E94560 0%, #0F3460 100%);">
+                            <div class="blog-icon">📱</div>
+                            <span class="blog-category">Marketing Digital</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">5 errores que tu negocio comete en Instagram (y cómo solucionarlos)</h3>
+                            <p class="blog-excerpt">La mayoría de negocios locales en Vigo cometen los mismos errores en redes sociales: fotos oscuras, sin estrategia, publicando cuando se acuerdan. Te contamos los 5 errores más comunes y cómo evitarlos con acciones simples.</p>
+                            <div class="blog-divider"></div>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link">Leer más →</a>
+                                <span class="blog-time">⏱ 4 min de lectura</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ARTÍCULO 2 -->
+                    <article class="blog-card">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #0F3460 0%, #1A1A2E 100%);">
+                            <div class="blog-icon">🎬</div>
+                            <span class="blog-category" style="background-color: #0F3460;">Contenido Audiovisual</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">¿Por qué los Reels funcionan mejor que las fotos para negocios locales?</h3>
+                            <p class="blog-excerpt">El algoritmo de Instagram prioriza el vídeo. Si tu negocio en Vigo solo sube fotos, estás perdiendo alcance. Te explicamos por qué los Reels son la herramienta más potente para atraer clientes locales en 2026.</p>
+                            <div class="blog-divider"></div>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link">Leer más →</a>
+                                <span class="blog-time">⏱ 3 min de lectura</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ARTÍCULO 3 -->
+                    <article class="blog-card">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #1A1A2E 0%, #E94560 100%);">
+                            <div class="blog-icon">💰</div>
+                            <span class="blog-category" style="background-color: #1A1A2E;">Estrategia Local</span>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title">Cómo conseguir más clientes con contenido profesional (sin gastar en publicidad)</h3>
+                            <p class="blog-excerpt">No necesitas un presupuesto enorme en ads para que tu negocio sea visible. Con contenido profesional constante, buen SEO local y una estrategia de publicación, puedes atraer clientes de forma orgánica. Te enseñamos cómo.</p>
+                            <div class="blog-divider"></div>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link">Leer más →</a>
+                                <span class="blog-time">⏱ 5 min de lectura</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- COLUMNA 1: MARCA -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="footer-logo-text">FEITO <span class="accent">AQUÍ</span></span>
+                        <span class="footer-logo-media">MEDIA</span>
+                    </div>
+                    <p class="footer-tagline">Contenido profesional para negocios locales de Vigo</p>
+                    <!-- GABRIEL: Substituir por links reales de las redes sociales -->
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" title="Instagram" target="_blank">📸</a>
+                        <a href="#" class="social-link" title="TikTok" target="_blank">🎵</a>
+                        <a href="https://wa.me/34692231872" class="social-link" title="WhatsApp" target="_blank">💬</a>
+                        <a href="mailto:feitoaquimedia@gmail.com" class="social-link" title="Email" target="_blank">✈️</a>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: SERVICIOS -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#packs">Pack Prueba</a></li>
+                        <li><a href="#packs">Sesión Simple</a></li>
+                        <li><a href="#packs">Pack Semanal</a></li>
+                        <li><a href="#packs">Pack Mensual</a></li>
+                        <li><a href="#packs">Todos los packs</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMNA 3: EMPRESA -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Sobre nosotros</a></li>
+                        <li><a href="#como-funciona">Cómo funciona</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#faq">Preguntas frecuentes</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMNA 4: CONTACTO -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Contacto</h4>
+                    <div class="footer-contact">
+                        <p>📈 Vigo, Pontevedra, España</p>
+                        <p><a href="tel:+34692231872">📱 +34 692 231 872</a></p>
+                        <p><a href="mailto:feitoaquimedia@gmail.com">✉️ feitoaquimedia@gmail.com</a></p>
+                        <p>🕒 Lunes a Viernes: 9:00 - 20:00</p>
+                        <p>🕒 Sábados: 10:00 - 14:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra inferior -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Feito Aquí Media. Todos los derechos reservados.</p>
+                <p class="footer-credit">Hecho con <a href="https://wa.me/34692231872?text=Vi%20el%20easter%20egg%20%F0%9F%98%84" class="easter-egg">❤️</a> en Vigo</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp flotante -->
+    <a href="https://wa.me/34692231872?text=Hola!%20Vi%20vuestra%20web%20y%20me%20interesa%20el%20servicio%20de%20contenido%20%F0%9F%93%B8" class="whatsapp-btn" id="whatsapp-btn" target="_blank" aria-label="Contactar por WhatsApp">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2 22l6.29-.97C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+            <path d="M9 9h6M9 13h6M9 17h3" stroke="white" stroke-width="2"/>
+        </svg>
+        <div class="whatsapp-notification">1</div>
+        <div class="whatsapp-tooltip">¿Hablamos? 💬</div>
+    </a>
+
+    <!-- Botón Scroll-to-Top -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver al inicio">↑</button>
+
+    <!-- Intersection Observer para animaciones -->
+    <script src="script.js"></script>
+    <!-- Landing page FEITO AQUÍ MEDIA · Diseñada y desarrollada con estrategia · 2026 -->
+</body>
+</html>

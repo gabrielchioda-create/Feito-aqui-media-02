@@ -1,0 +1,274 @@
+PROMPT 7 — POLIMENTO FINAL, META TAGS, SEO, PERFORMANCE & ACESSIBILIDADE
+
+═══════════════════════════════════════════════════════════════
+1. META TAGS & SEO COMPLETO (dentro do <head>)
+═══════════════════════════════════════════════════════════════
+
+Adiciona ou actualiza TODAS estas meta tags no <head>:
+
+<!-- Charset & Viewport (já devem existir, confirma) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Básico -->
+<title>Feito Aqui Media | Marketing Digital para Restaurantes en Vigo y Galicia</title>
+<meta name="description" content="Agencia de marketing digital especializada en restaurantes. Atraemos clientes reales a tu restaurante con estrategias de redes sociales, contenido visual y publicidad local en Vigo y toda Galicia.">
+<meta name="keywords" content="marketing digital restaurantes, redes sociales restaurantes, publicidad restaurantes Vigo, agencia marketing hostelería, contenido visual restaurantes, gestión Instagram restaurantes, marketing gastronómico Galicia">
+<meta name="author" content="Feito Aqui Media">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://feitoaquimedia.com/">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Feito Aqui Media | Tu restaurante lleno cada noche">
+<meta property="og:description" content="Marketing digital que llena mesas. Estrategias probadas para restaurantes en Vigo y Galicia.">
+<meta property="og:image" content="https://feitoaquimedia.com/og-image.jpg">
+<meta property="og:url" content="https://feitoaquimedia.com/">
+<meta property="og:site_name" content="Feito Aqui Media">
+<meta property="og:locale" content="es_ES">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Feito Aqui Media | Marketing para Restaurantes">
+<meta name="twitter:description" content="Llenamos tu restaurante con marketing digital que funciona.">
+<meta name="twitter:image" content="https://feitoaquimedia.com/og-image.jpg">
+
+<!-- Favicon (placeholder - substituir depois com o real) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+
+<!-- Preconnect para performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Schema.org JSON-LD (Structured Data) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://feitoaquimedia.com",
+  "name": "Feito Aqui Media",
+  "description": "Agencia de marketing digital especializada en restaurantes en Vigo y Galicia",
+  "url": "https://feitoaquimedia.com",
+  "telephone": "+34612345678",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vigo",
+    "addressRegion": "Galicia",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.2406,
+    "longitude": -8.7207
+  },
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": [
+    "https://www.instagram.com/feitoaquimedia",
+    "https://www.tiktok.com/@feitoaquimedia"
+  ],
+  "priceRange": "€€",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.2406,
+      "longitude": -8.7207
+    },
+    "geoRadius": "100000"
+  }
+}
+</script>
+
+═══════════════════════════════════════════════════════════════
+2. PERFORMANCE & OPTIMIZAÇÃO
+═══════════════════════════════════════════════════════════════
+
+A) CSS CRITICAL PATH:
+- Confirma que todo o CSS está inline dentro de <style> no <head> (já deve estar)
+- Adiciona will-change: transform nos elementos que têm animações de scroll
+- Usa contain: layout style paint nas secções grandes para optimizar rendering
+
+B) LAZY LOADING:
+- Todas as imagens (se houver <img>) devem ter loading="lazy" e decoding="async"
+- Excepção: a imagem do Hero (primeira visível) deve ter loading="eager" e fetchpriority="high"
+
+C) SMOOTH SCROLL GLOBAL:
+No CSS, confirma que existe:
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* altura do header fixo */
+}
+
+D) REDUÇÃO DE LAYOUT SHIFT (CLS):
+- Todas as secções devem ter min-height definido
+- Os cards devem ter aspect-ratio ou dimensões fixas
+- O hero deve ter min-height: 100vh (já deve ter)
+
+E) PRINT STYLESHEET:
+Adiciona no CSS:
+@media print {
+  .header, .whatsapp-float, .scroll-top, .mobile-menu {
+    display: none !important;
+  }
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+═══════════════════════════════════════════════════════════════
+3. ACESSIBILIDADE (A11Y)
+═══════════════════════════════════════════════════════════════
+
+A) ARIA LABELS:
+- O botão hamburger deve ter: aria-label="Abrir menú de navegación" aria-expanded="false"
+- O botão WhatsApp: aria-label="Contactar por WhatsApp"
+- O botão scroll-to-top: aria-label="Volver arriba"
+- Cada secção com id deve ter role="region" e aria-labelledby apontando para o seu h2
+- Os acordeões do FAQ devem ter role="button" aria-expanded="true/false"
+
+B) SKIP NAVIGATION:
+Adiciona como PRIMEIRO elemento dentro do <body>:
+<a href="#hero" class="skip-link" 
+   style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);
+   background:var(--primary-coral);color:white;padding:12px 24px;
+   border-radius:8px;z-index:10000;font-weight:600;
+   transition:top 0.3s ease;">
+   Saltar al contenido principal
+</a>
+E no CSS:
+.skip-link:focus {
+  top: 10px;
+}
+
+C) FOCUS STATES:
+Confirma que todos os links, botões e elementos interactivos têm estilos de :focus-visible claros:
+:focus-visible {
+  outline: 3px solid var(--primary-coral);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+D) REDUCED MOTION:
+Confirma que existe:
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+═══════════════════════════════════════════════════════════════
+4. MICRO-INTERACÇÕES DE POLIMENTO
+═══════════════════════════════════════════════════════════════
+
+A) HOVER ELEVAÇÃO NOS CARDS:
+Todos os cards (packs, como funciona, blog, testemunhos) devem ter:
+- Hover: translateY(-8px) + box-shadow expandido
+- Transição suave: transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+
+B) BOTÕES CTA — EFEITO SHINE:
+Nos botões principais de CTA, adiciona um efeito de "brilho" que passa da esquerda para a direita:
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+.cta-button:hover::after {
+  left: 100%;
+}
+
+C) CONTADOR ANIMADO (se houver números/estatísticas):
+Se existem números como "+200 restaurantes" ou "98% satisfacción":
+- Anima-os com um countUp quando entram no viewport via Intersection Observer
+- De 0 até ao número final em 2 segundos
+- Easing: ease-out
+
+D) PARALLAX SUBTIL NO HERO:
+Se o hero tem imagem ou gradiente de fundo:
+- Aplica um parallax suave (background-attachment: fixed OU transform via JS com scroll)
+- Velocidade: 0.3x do scroll
+- DESACTIVAR em mobile (performance)
+
+E) TRANSIÇÃO ENTRE SECÇÕES:
+Adiciona separadores visuais subtis entre secções:
+- Usar um pseudo-elemento ::before ou ::after com um gradiente suave
+- Ou uma wave SVG muito subtil entre o hero e a próxima secção
+
+═══════════════════════════════════════════════════════════════
+5. DETALHES FINAIS
+═══════════════════════════════════════════════════════════════
+
+A) TEXTO SELECÇÃO:
+::selection {
+  background: var(--primary-coral);
+  color: white;
+}
+
+B) SCROLLBAR CUSTOM (Webkit):
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg, #0a0a0a);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-coral), var(--primary-coral-light, #ff8a65));
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-coral);
+}
+
+C) LOADING STATE:
+Adiciona um preloader simples que desaparece quando a página carrega:
+- Um overlay escuro com o logo/emoji 🍽️ centrado
+- Animação de pulse
+- Desaparece com fade-out após window.onload
+- Duração máxima: 2 segundos (failsafe com setTimeout)
+
+D) CURSOR CUSTOM NOS CTAs (opcional mas elegante):
+Os botões CTA podem ter cursor: pointer (confirma) e opcionalmente
+um hover state no cursor.
+
+E) ANO DINÂMICO NO FOOTER:
+Se o footer tem "© 2025" ou "© 2026", substitui por JavaScript dinâmico:
+document.querySelector('.footer-year').textContent = new Date().getFullYear();
+E no HTML: © <span class="footer-year"></span> Feito Aqui Media
+
+═══════════════════════════════════════════════════════════════
+6. VALIDAÇÃO FINAL — CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+Antes de terminar, confirma que:
+
+☐ A página carrega em menos de 3 segundos (sem recursos externos pesados)
+☐ Todas as secções aparecem na ordem correcta:
+   Hero → Problema → Solução → Packs → Como Funciona → Testemunhos → FAQ → CTA Final → Blog → Footer
+☐ O menu hamburger funciona em mobile e fecha ao clicar num link
+☐ Todos os links de navegação fazem scroll suave para a secção correcta
+☐ O botão WhatsApp flutuante está visível e funcional
+☐ O botão scroll-to-top aparece/desaparece correctamente
+☐ Os acordeões do FAQ abrem/fecham correctamente
+☐ O carrossel de testemunhos funciona (auto-play + dots + swipe mobile)
+☐ As animações de entrada (Intersection Observer) funcionam ao fazer scroll
+☐ O design é 100% responsivo (testar em 375px, 768px, 1024px, 1440px)
+☐ Não há erros na consola do browser (F12 → Console)
+☐ As meta tags estão todas presentes e correctas
+☐ O Schema.org JSON-LD está válido
+
+NÃO APAGUES NADA DO QUE JÁ EXISTE.
+APENAS ADICIONA E MELHORA.
+O RESULTADO FINAL DEVE SER UM ÚNICO FICHEIRO index.html COMPLETO E FUNCIONAL.

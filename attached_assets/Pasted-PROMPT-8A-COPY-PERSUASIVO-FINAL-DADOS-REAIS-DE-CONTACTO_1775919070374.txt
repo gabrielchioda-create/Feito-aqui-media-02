@@ -1,0 +1,329 @@
+PROMPT 8A — COPY PERSUASIVO FINAL + DADOS REAIS DE CONTACTO
+
+═══════════════════════════════════════════════════════════════
+1. DADOS DE CONTACTO — SUBSTITUIR EM TODO O SITE
+═══════════════════════════════════════════════════════════════
+
+WHATSAPP: Todos os links de WhatsApp devem apontar para:
+https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20Quiero%20llenar%20mi%20restaurante%20de%20clientes.%20%C2%BFMe%20cuentas%20c%C3%B3mo%3F
+
+EMAIL: feitoaquimedia@gmail.com
+MORADA: Vigo, Galicia
+HORÁRIO: Lunes a Viernes, 9:00 – 19:00
+
+REDES SOCIAIS:
+- Eliminar todos os links de redes sociais do footer e do Schema.org (ainda não temos contas activas)
+- No lugar das redes sociais no footer, colocar apenas:
+  "📍 Vigo, Galicia | 📧 feitoaquimedia@gmail.com"
+- Manter o ícone de WhatsApp flutuante (esse fica!)
+
+SCHEMA.ORG — Actualizar o JSON-LD:
+- "telephone": "+34692231872"
+- "email": "feitoaquimedia@gmail.com"
+- Remover o array "sameAs" (sem redes sociais por agora)
+- "openingHours": "Mo-Fr 09:00-19:00"
+
+═══════════════════════════════════════════════════════════════
+2. HERO — COPY PERSUASIVO
+═══════════════════════════════════════════════════════════════
+
+Subtítulo superior (badge/eyebrow): 
+"🎬 Creadores de contenido para restaurantes en Vigo"
+
+Título H1 principal (usar <br> para quebra de linha):
+"Tu comida es increíble.<br>El problema es que <span class='highlight'>nadie lo sabe.</span>"
+
+Parágrafo de apoio:
+"Creamos el contenido que hace que la gente pare de hacer scroll, 
+se le haga agua la boca y reserve mesa en tu restaurante. 
+Sin que tú pierdas un solo minuto de tu cocina."
+
+Botão CTA primário: "Quiero llenar mi restaurante →"
+Botão CTA secundário (se existir): "Ver cómo funciona ↓"
+
+Prova social abaixo dos botões:
+"⭐ 4.9 de satisfacción · +500 fotos · +200 vídeos creados"
+
+═══════════════════════════════════════════════════════════════
+3. SECÇÃO PROBLEMA — COPY EMOCIONAL
+═══════════════════════════════════════════════════════════════
+
+Eyebrow/badge: "😤 ¿Te suena esto?"
+
+Título H2:
+"Cocinas como un crack, pero tus mesas siguen vacías entre semana"
+
+Lista de dores (cada uma como card ou item):
+
+PROBLEMA 1:
+Ícone: 📱
+Título: "Publicas sin estrategia"
+Texto: "Subes fotos cuando te acuerdas, sin un plan. 
+Resultado: 47 likes de tu madre y tus camareros."
+
+PROBLEMA 2:
+Ícone: ⏰
+Título: "No tienes tiempo para redes"
+Texto: "Estás entre fogones 12 horas al día. ¿Quién tiene 
+tiempo para grabar reels, editar y escribir captions?"
+
+PROBLEMA 3:
+Ícone: 💸
+Título: "Cada mesa vacía te cuesta dinero"
+Texto: "Mientras tu competencia llena el local con vídeos virales, 
+tú sigues esperando que el boca a boca funcione."
+
+PROBLEMA 4:
+Ícone: 🤷
+Título: "Contrataste a alguien y no funcionó"
+Texto: "Agencias que no entienden hostelería. Community managers 
+que nunca pisaron una cocina. Dinero tirado."
+
+Frase de transição (después de los problemas):
+"No es que tu restaurante sea malo. Es que nadie está 
+contando tu historia como se merece."
+
+═══════════════════════════════════════════════════════════════
+4. SECÇÃO SOLUÇÃO — COPY DE TRANSFORMAÇÃO
+═══════════════════════════════════════════════════════════════
+
+Eyebrow: "✨ Aquí es donde entramos nosotros"
+
+Título H2:
+"Convertimos tu restaurante en el sitio donde <span class='highlight'>todo el mundo quiere ir</span>"
+
+Parágrafo:
+"Somos creadores de contenido especializados SOLO en hostelería. 
+Vamos a tu restaurante, grabamos contenido que da hambre 
+y lo convertimos en una máquina de atraer clientes."
+
+Benefícios (3 cards ou colunas):
+
+BENEFÍCIO 1:
+Ícone: 🎥
+Título: "Contenido que da hambre"
+Texto: "Vídeos y fotos profesionales que hacen que la gente 
+no pueda dejar de mirar. Ese plato que ya hueles con los ojos."
+
+BENEFÍCIO 2:
+Ícone: 📈
+Título: "Estrategia que llena mesas"
+Texto: "No publicamos por publicar. Cada pieza de contenido 
+tiene un objetivo: que alguien reserve, pida o venga."
+
+BENEFÍCIO 3:
+Ícone: 🤝
+Título: "Tú cocinas, nosotros grabamos"
+Texto: "Cero estrés para ti. Vamos a tu local, grabamos 
+en 2 horas y tú sigues con lo tuyo. Así de fácil."
+
+═══════════════════════════════════════════════════════════════
+5. SECÇÃO PACKS — COPY COMERCIAL
+═══════════════════════════════════════════════════════════════
+
+Eyebrow: "💰 Planes claros, sin sorpresas"
+
+Título H2: 
+"Elige el plan que mejor se adapta a tu restaurante"
+
+Subtítulo:
+"Sin permanencias. Sin contratos raros. Si no te gusta, lo dejas."
+
+PACK 1 — PACK PRUEBA (marcar como "⭐ Más Popular"):
+Nombre: "Pack Prueba"
+Precio: El que ya está definido
+Subtítulo: "Para probar sin compromiso"
+Ideal para: "Restaurantes que quieren ver resultados antes de comprometerse"
+Incluye (lista):
+- 1 sesión de grabación en tu local (2h)
+- 5 vídeos cortos optimizados para Reels/TikTok
+- 5 fotos profesionales de tus platos
+- Edición profesional con música y textos
+- Entrega en 5 días laborables
+- 1 revisión incluida
+CTA del pack: "Empezar con el Pack Prueba →"
+
+PACK 2 — PACK CRECIMIENTO:
+Nombre: "Pack Crecimiento"
+Subtítulo: "Para crecer en serio"
+Ideal para: "Restaurantes que quieren presencia constante en redes"
+Incluye (lista):
+- 2 sesiones de grabación al mes
+- 12 vídeos cortos (Reels/TikTok)
+- 10 fotos profesionales
+- Calendario editorial mensual
+- Estrategia de hashtags y horarios
+- Copywriting para captions
+- 2 revisiones por pieza
+CTA del pack: "Quiero crecer →"
+
+PACK 3 — PACK TOTAL:
+Nombre: "Pack Restaurante Lleno"
+Subtítulo: "El arsenal completo"
+Ideal para: "Restaurantes que quieren dominar su zona"
+Incluye (lista):
+- 4 sesiones de grabación al mes
+- 20+ vídeos cortos
+- 15 fotos profesionales
+- Gestión completa de 1 red social
+- Estrategia mensual personalizada
+- Copywriting para todas las publicaciones
+- Análisis de métricas mensual
+- Soporte prioritario por WhatsApp
+- Revisiones ilimitadas
+CTA del pack: "Quiero el pack completo →"
+
+NOTA DEBAJO DOS PACKS:
+"🤔 ¿No sabes cuál elegir? Escríbenos por WhatsApp y te ayudamos 
+a elegir el plan perfecto para tu restaurante."
+(Com link para o WhatsApp)
+
+═══════════════════════════════════════════════════════════════
+6. SECÇÃO COMO FUNCIONA — COPY SIMPLES
+═══════════════════════════════════════════════════════════════
+
+Eyebrow: "🔄 Tan fácil como 1, 2, 3"
+
+Título H2: "De mesa vacía a lista de espera en 3 pasos"
+
+PASSO 1:
+Ícone: 💬
+Título: "1. Nos escribes"
+Texto: "Cuéntanos sobre tu restaurante por WhatsApp. 
+En 24h te respondemos con un plan personalizado. Sin compromiso."
+
+PASSO 2:
+Ícone: 🎬
+Título: "2. Grabamos en tu local"
+Texto: "Vamos a tu restaurante con todo el equipo. 
+En 2 horas grabamos contenido para semanas. 
+Tú solo tienes que cocinar como siempre."
+
+PASSO 3:
+Ícone: 🚀
+Título: "3. Tu restaurante se llena"
+Texto: "Editamos, optimizamos y publicamos. 
+Tú ves cómo las reservas empiezan a subir. 
+Y nosotros también sonreímos."
+
+CTA después de los pasos:
+"Empezar ahora — es gratis hablar →" (link a WhatsApp)
+
+═══════════════════════════════════════════════════════════════
+7. SECÇÃO FAQ — PERGUNTAS REAIS
+═══════════════════════════════════════════════════════════════
+
+Eyebrow: "❓ Preguntas frecuentes"
+Título H2: "Todo lo que necesitas saber antes de empezar"
+
+PERGUNTA 1:
+P: "¿Tengo que hacer algo durante la grabación?"
+R: "Nada. Bueno, sí: cocinar como siempre. Nosotros nos encargamos 
+de todo. Llegamos, montamos, grabamos y nos vamos. 
+Tú no pierdes ni un servicio."
+
+PERGUNTA 2:
+P: "¿En cuánto tiempo veo resultados?"
+R: "Normalmente, desde la primera semana de publicación empiezas 
+a notar más interacción y visibilidad. Los resultados en reservas 
+suelen llegar entre la semana 2 y 4, dependiendo de tu zona."
+
+PERGUNTA 3:
+P: "¿Y si no me gusta el contenido?"
+R: "Todos los packs incluyen revisiones. Si algo no te convence, 
+lo ajustamos hasta que estés 100% satisfecho. 
+Nunca publicamos nada sin tu aprobación."
+
+PERGUNTA 4:
+P: "¿Puedo cancelar cuando quiera?"
+R: "Sí. No hay permanencias ni contratos de larga duración. 
+Si no estás contento, lo dejas. Así de simple. 
+(Pero spoiler: no vas a querer dejarlo.)"
+
+PERGUNTA 5:
+P: "¿Solo trabajáis en Vigo?"
+R: "Estamos basados en Vigo, pero trabajamos en toda Galicia. 
+Si tu restaurante está en Pontevedra, Ourense, Santiago o A Coruña, 
+también llegamos."
+
+PERGUNTA 6:
+P: "¿Qué necesito tener antes de empezar?"
+R: "Solo un restaurante con buena comida y ganas de llenarlo. 
+Del resto nos encargamos nosotros. Si no tienes redes sociales, 
+también te ayudamos a crearlas."
+
+═══════════════════════════════════════════════════════════════
+8. SECÇÃO CTA FINAL — URGÊNCIA
+═══════════════════════════════════════════════════════════════
+
+Título H2:
+"Tu competencia ya está creando contenido.<br>
+<span class='highlight'>¿Vas a quedarte mirando?</span>"
+
+Parágrafo:
+"Cada día sin contenido profesional es un día que pierdes clientes. 
+La buena noticia: empezar es gratis. Escríbenos y en 24 horas 
+tienes un plan para llenar tu restaurante."
+
+Botão CTA grande: "Quiero empezar hoy — Escríbenos →"
+(Link ao WhatsApp)
+
+Texto pequeno abaixo: "💬 Respondemos en menos de 2 horas · Sin compromiso"
+
+═══════════════════════════════════════════════════════════════
+9. SECÇÃO BLOG — TÍTULOS SEO
+═══════════════════════════════════════════════════════════════
+
+ARTIGO 1:
+Título: "5 errores que tu restaurante comete en Instagram (y cómo solucionarlos)"
+Excerpt: "El 73% de los restaurantes publican sin estrategia. 
+Descubre los errores más comunes y cómo convertir tu perfil 
+en una máquina de atraer clientes."
+Tag: "Redes Sociales"
+
+ARTIGO 2:
+Título: "Por qué los vídeos cortos llenan más mesas que la publicidad tradicional"
+Excerpt: "Un reel bien hecho genera más reservas que un anuncio 
+en el periódico. Te explicamos por qué y cómo aprovecharlo."
+Tag: "Contenido Visual"
+
+ARTIGO 3:
+Título: "Caso real: cómo un restaurante en Vigo duplicó sus reservas en 30 días"
+Excerpt: "Sin pagar publicidad. Solo con contenido orgánico 
+bien hecho. Esta es la historia de cómo lo conseguimos."
+Tag: "Casos de Éxito"
+
+═══════════════════════════════════════════════════════════════
+10. FOOTER — ACTUALIZAR
+═══════════════════════════════════════════════════════════════
+
+Coluna 1 — Marca:
+"Feito Aqui Media"
+"Creadores de contenido para restaurantes que quieren llenar sus mesas."
+
+Coluna 2 — Contacto:
+📍 Vigo, Galicia
+📧 feitoaquimedia@gmail.com
+📱 +34 692 231 872
+🕐 Lun–Vie 9:00–19:00
+
+Coluna 3 — Navegación:
+Links internos para cada secção (Inicio, Servicios, Cómo funciona, 
+Precios, FAQ, Blog)
+
+Coluna 4 — Legal (placeholder):
+Aviso Legal
+Política de Privacidad
+Política de Cookies
+
+Copyright: "© [ano dinâmico] Feito Aqui Media. Todos los derechos reservados."
+Tagline final: "Hecho con 🧡 en Vigo, Galicia"
+
+═══════════════════════════════════════════════════════════════
+REGRAS:
+- NÃO APAGAR estrutura, CSS nem JavaScript existente
+- APENAS substituir os textos placeholder pelos textos acima
+- Manter TODAS as animações, hover effects e funcionalidades
+- Todos os CTAs apontam para o link de WhatsApp fornecido
+- O resultado deve ser o ficheiro index.html COMPLETO e funcional
+═══════════════════════════════════════════════════════════════

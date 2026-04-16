@@ -1,0 +1,253 @@
+Continua a construção da landing page "FEITO AQUÍ MEDIA". Mantém TODO o código anterior (header + hero + problema + solução + packs + cómo funciona + testimonios + FAQ + CTA final) intacto e ADICIONA as secções finais, substituindo os placeholders restantes.
+
+=== MANTER A IDENTIDADE VISUAL ANTERIOR ===
+- Mesmas cores: #1A1A2E, #E94560, #0F3460, #FAFAFA, #333333
+- Mesma tipografia: Inter (Google Fonts)
+- Mesmo estilo: profissional, limpo, posturado
+- Mesmo link WhatsApp base: https://wa.me/34692231872
+
+===================================================================
+=== SECÇÃO 1: BLOG / CONTEÚDO SEO (id="blog") ===
+===================================================================
+
+Objectivo: dar à página conteúdo indexável para SEO local. Não é um blog real com CMS — são 3 artigos "falsos" (cards) que servem como conteúdo estático rico em keywords, com possibilidade futura de linkar a artigos reais.
+
+Estrutura geral:
+- Fundo: #FAFAFA (branco limpo)
+- Tag superior centrada: "Blog · Consejos para tu negocio" em #E94560, uppercase, letter-spacing largo
+- Título H2 centrado: "Ideas para hacer crecer tu negocio local"
+- Subtítulo centrado: "Consejos rápidos de marketing digital para negocios de Vigo. Gratis, sin humo, directo al grano."
+
+=== 3 CARDS DE ARTIGO em row ===
+
+Layout: 3 colunas desktop (>1024px), 2+1 tablet (768-1024px), 1 coluna mobile (<768px)
+
+Cada card:
+- Fundo branco (#FFFFFF)
+- Border-radius: 20px
+- Overflow: hidden (para a imagem de topo ter cantos arredondados)
+- Box-shadow: 0 4px 20px rgba(0,0,0,0.06)
+- Hover: translateY(-6px) + sombra mais intensa
+- Animação de entrada: fade-in + slide-up com Intersection Observer (stagger 0.15s)
+
+Estrutura interna de cada card:
+1. IMAGEM DE TOPO (placeholder): rectângulo 100% width, aspect-ratio 16/9, fundo com gradiente como placeholder
+2. CATEGORIA tag (posicionada sobre a imagem, canto inferior esquerdo, com padding): badge pequeno
+3. TÍTULO do artigo (H3)
+4. EXCERTO do artigo (2-3 linhas de texto)
+5. Linha separadora fina
+6. ROW inferior: "Leer más →" link à esquerda + "⏱ 3 min de lectura" à direita
+
+--- ARTIGO 1 ---
+- Placeholder imagem: gradiente de #E94560 para #0F3460 (diagonal)
+- Sobre a imagem, texto centrado em branco: "📱" (emoji grande, 48px) — como ícone decorativo
+- Categoria: "Marketing Digital" (badge fundo #E94560, texto branco)
+- Título H3: "5 errores que tu negocio comete en Instagram (y cómo solucionarlos)"
+- Excerto: "La mayoría de negocios locales en Vigo cometen los mismos errores en redes sociales: fotos oscuras, sin estrategia, publicando cuando se acuerdan. Te contamos los 5 errores más comunes y cómo evitarlos con acciones simples."
+- Tempo: "⏱ 4 min de lectura"
+- Link "Leer más →": por agora, href="#" (placeholder)
+- Keywords SEO no texto: "negocios locales en Vigo", "Instagram", "redes sociales"
+
+--- ARTIGO 2 ---
+- Placeholder imagem: gradiente de #0F3460 para #1A1A2E
+- Ícone sobre imagem: "🎬" (48px)
+- Categoria: "Contenido Audiovisual" (badge fundo #0F3460, texto branco)
+- Título H3: "¿Por qué los Reels funcionan mejor que las fotos para negocios locales?"
+- Excerto: "El algoritmo de Instagram prioriza el vídeo. Si tu negocio en Vigo solo sube fotos, estás perdiendo alcance. Te explicamos por qué los Reels son la herramienta más potente para atraer clientes locales en 2026."
+- Tempo: "⏱ 3 min de lectura"
+- Link: href="#"
+- Keywords: "Reels", "negocios locales", "Vigo", "clientes locales", "2026"
+
+--- ARTIGO 3 ---
+- Placeholder imagem: gradiente de #1A1A2E para #E94560
+- Ícone sobre imagem: "💰" (48px)
+- Categoria: "Estrategia Local" (badge fundo #1A1A2E, texto branco)
+- Título H3: "Cómo conseguir más clientes con contenido profesional (sin gastar en publicidad)"
+- Excerto: "No necesitas un presupuesto enorme en ads para que tu negocio sea visible. Con contenido profesional constante, buen SEO local y una estrategia de publicación, puedes atraer clientes de forma orgánica. Te enseñamos cómo."
+- Tempo: "⏱ 5 min de lectura"
+- Link: href="#"
+- Keywords: "más clientes", "contenido profesional", "SEO local", "publicación orgánica"
+
+=== NOTA SEO IMPORTANTE ===
+Adicionar no HTML, dentro da secção de blog, texto oculto semántico (NÃO display:none — usar um <article> real com conteúdo visível) que inclua naturalmente estas keywords:
+- "contenido para negocios en Vigo"
+- "vídeos para restaurantes Vigo"
+- "fotógrafo para negocios Vigo"
+- "marketing digital Vigo"
+- "reels para negocios locales"
+- "contenido profesional Vigo"
+- "creador de contenido Vigo"
+
+Isto pode ser feito como um parágrafo introdutório visível ACIMA dos cards, com texto do tipo:
+"En Feito Aquí Media ayudamos a negocios locales de Vigo a crear contenido profesional: vídeos para restaurantes, reels para tiendas, fotos para barberías y mucho más. Somos tu creador de contenido en Vigo."
+- Estilo: texto centrado, cor #666666, font-size 15px, max-width 700px, margem auto, line-height 1.6
+
+===================================================================
+=== SECÇÃO 2: FOOTER (id="contacto") ===
+===================================================================
+
+Objectivo: footer profissional com informação de contacto, links rápidos, e presença de marca. Deve parecer o footer de uma empresa estabelecida.
+
+Estrutura geral:
+- Fundo: #1A1A2E (escuro)
+- Padding top: 80px, padding bottom: 32px
+- Max-width container: 1200px, centrado
+
+=== LAYOUT DO FOOTER: 4 colunas desktop, 2x2 tablet, 1 coluna mobile ===
+
+--- COLUNA 1: MARCA ---
+- Logo texto: "FEITO AQUÍ" em branco, 24px, font-weight 800 + "MEDIA" em #E94560
+- Tagline abaixo: "Contenido profesional para negocios locales de Vigo" (branco, opacidade 0.6, 14px)
+- Espaço de 20px
+- Row de ícones sociais (links placeholder por agora):
+  - Instagram (ícone SVG inline ou emoji 📸) → href="#"
+  - TikTok (ícone ou emoji 🎵) → href="#"
+  - WhatsApp (ícone ou emoji 💬) → https://wa.me/34692231872
+  - Email (ícone ou emoji ✉️) → mailto:feitoaquimedia@gmail.com
+- Ícones: 24px, cor branca, opacidade 0.6, hover: opacidade 1 + cor #E94560, transition 0.3s
+- Comentário HTML: <!-- GABRIEL: Substituir por links reais das redes sociais -->
+
+--- COLUNA 2: SERVICIOS (links internos) ---
+- Título coluna: "Servicios" (branco, 16px, font-weight 700, margin-bottom 16px)
+- Lista de links (sem bullets, sem decoração):
+  - Pack Prueba → href="#packs"
+  - Sesión Simple → href="#packs"
+  - Pack Semanal → href="#packs"
+  - Pack Mensual → href="#packs"
+  - Todos los packs → href="#packs"
+- Estilo links: branco, opacidade 0.6, hover: opacidade 1 + cor #E94560, font-size 14-15px, line-height 2.2
+
+--- COLUNA 3: EMPRESA (links internos) ---
+- Título: "Empresa"
+- Links:
+  - Sobre nosotros → href="#hero"
+  - Cómo funciona → href="#como-funciona"
+  - Testimonios → href="#testimonios"
+  - Preguntas frecuentes → href="#faq"
+  - Blog → href="#blog"
+
+--- COLUNA 4: CONTACTO ---
+- Título: "Contacto"
+- Items (com ícone/emoji + texto):
+  - 📍 "Vigo, Pontevedra, España"
+  - 📱 "+34 692 231 872" (link tel:+34692231872)
+  - ✉️ "feitoaquimedia@gmail.com" (link mailto:)
+  - 🕐 "Lunes a Viernes: 9:00 - 20:00"
+  - 🕐 "Sábados: 10:00 - 14:00"
+- Estilo: branco, opacidade 0.6, font-size 14px, line-height 2.2
+
+=== BARRA INFERIOR DO FOOTER ===
+- Linha separadora fina (1px, branco, opacidade 0.1)
+- Margin-top: 48px, padding-top: 24px
+- Layout: row, espaço entre:
+  - Esquerda: "© 2026 Feito Aquí Media. Todos los derechos reservados."
+  - Direita: "Hecho con ❤️ en Vigo"
+- Estilo: branco, opacidade 0.4, font-size 13px
+
+=== LINK OCULTO PARA ADMIN (Easter egg) ===
+No texto "Hecho con ❤️ en Vigo", o coração deve ser um link para https://wa.me/34692231872?text=Vi%20el%20easter%20egg%20😄 — sem decoração visual, sem cor diferente, completamente oculto. Só quem clicar no coração é que descobre.
+
+===================================================================
+=== ELEMENTO 3: BOTÃO WHATSAPP FLUTUANTE ===
+===================================================================
+
+Objectivo: botão fixo (position: fixed) no canto inferior direito que acompanha SEMPRE o scroll. É o conversor silencioso — está sempre disponível para o clique impulsivo.
+
+Estrutura:
+- Position: fixed
+- Bottom: 24px, right: 24px
+- Z-index: 9999 (acima de tudo)
+- Tamanho: 64px × 64px
+- Fundo: #25D366 (verde WhatsApp oficial)
+- Border-radius: 50% (círculo perfeito)
+- Box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4)
+- Cursor: pointer
+- Link: https://wa.me/34692231872?text=Hola!%20Vi%20vuestra%20web%20y%20me%20interesa%20el%20servicio%20de%20contenido%20📸
+
+Ícone dentro:
+- SVG do logótipo WhatsApp em branco (usar o SVG oficial simplificado do WhatsApp: o telefone dentro do balão de chat)
+- Tamanho do SVG: 36px
+- Centrado no botão (display flex, align-items center, justify-content center)
+
+=== ANIMAÇÕES DO BOTÃO ===
+
+1. PULSE CONTÍNUO: 
+   - Animação CSS: um "anel" que expande do botão e desaparece (como uma onda)
+   - Implementar com pseudo-elemento ::before ou ::after
+   - @keyframes: scale(1) opacity(0.6) → scale(1.6) opacity(0) → loop infinito
+   - Cor do anel: #25D366
+   - Duration: 2s, infinite
+   
+2. HOVER:
+   - Scale(1.1) + sombra mais intensa
+   - Transition: 0.3s ease
+
+3. ENTRADA:
+   - O botão não aparece imediatamente ao carregar a página
+   - Delay de 3 segundos, depois aparece com fade-in + slide-up (de baixo para cima)
+   - Isto evita que seja intrusivo no carregamento inicial
+
+4. TOOLTIP:
+   - Ao fazer hover, aparece uma tooltip à esquerda do botão:
+   - Texto: "¿Hablamos? 💬"
+   - Fundo: branco, cor #333333, border-radius 8px, padding 8px 16px, font-size 14px, font-weight 600
+   - Box-shadow suave
+   - Animação: fade-in rápido (0.2s)
+   - Posição: à esquerda do botão, centrado verticalmente, com uma "seta" CSS (triângulo) a apontar para a direita (para o botão)
+   - Em mobile: a tooltip aparece acima do botão em vez de à esquerda (para não sair do ecrã)
+
+5. MOBILE:
+   - Bottom: 16px, right: 16px
+   - Tamanho: 56px × 56px (ligeiramente menor)
+   - SVG: 32px
+
+=== BADGE NOTIFICAÇÃO (toque extra) ===
+- No canto superior direito do botão, um mini-badge circular:
+  - Tamanho: 20px × 20px
+  - Fundo: #E94560
+  - Texto: "1" em branco, font-size 11px, bold
+  - Border: 2px solid white
+  - Position: absolute, top -2px, right -2px
+  - Animação: leve bounce ao aparecer
+- Este badge simula uma "notificação" e cria urgência visual para clicar
+
+=== INTERAÇÃO COM SCROLL ===
+- Quando o utilizador faz scroll para BAIXO e está na última 1/3 da página (perto do CTA final ou footer), o tooltip deve aparecer AUTOMATICAMENTE durante 4 segundos, mesmo sem hover
+- Isto funciona como um "nudge" — o utilizador está no fim da página, provavelmente a decidir, e o tooltip diz "¿Hablamos?"
+- Só deve acontecer UMA vez por visita (usar uma flag JS)
+
+===================================================================
+=== ELEMENTO 4: SCROLL-TO-TOP ===
+===================================================================
+
+Botão "voltar ao topo":
+- Position: fixed
+- Bottom: 24px, LEFT: 24px (lado oposto ao WhatsApp)
+- Tamanho: 44px × 44px
+- Fundo: #1A1A2E
+- Border-radius: 50%
+- Ícone: seta para cima (↑) em branco ou SVG de chevron-up
+- Opacity: 0 por defeito
+- Aparece (fade-in) quando o scroll passa os primeiros 600px
+- Click: smooth scroll para o topo (window.scrollTo com behavior smooth)
+- Hover: fundo #E94560, transition 0.3s
+- Z-index: 9998 (abaixo do WhatsApp)
+- Em mobile: 40px × 40px, bottom 16px, left 16px
+
+===================================================================
+=== REQUISITOS TÉCNICOS FINAIS ===
+===================================================================
+
+- Blog cards: responsivos, animados com Intersection Observer
+- Footer: grid 4 colunas → 2x2 → 1 coluna
+- WhatsApp flutuante: position fixed, z-index máximo, animações CSS puras
+- Scroll-to-top: JS para mostrar/esconder + smooth scroll
+- Tooltip do WhatsApp: CSS puro para a seta, JS para o auto-show no scroll
+- Todos os links internos do footer devem fazer smooth scroll para as secções
+- O smooth scroll do header (implementado no Prompt 1) deve continuar a funcionar para TODOS os links da página, incluindo os novos do footer
+- Performance: reutilizar o mesmo Intersection Observer para todas as animações de scroll (não criar múltiplos observers)
+- Testar que nenhum elemento fixo (WhatsApp, scroll-to-top) sobrepõe conteúdo importante em mobile
+- Código limpo, comentado em espanhol
+- Todo o texto visível em ESPANHOL
+- Adicionar ao final do <body> um comentário HTML:
+  <!-- Landing page FEITO AQUÍ MEDIA · Diseñada y desarrollada con estrategia · 2026 -->
