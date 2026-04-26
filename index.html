@@ -6,7 +6,7 @@
 
     <!-- SEO Básico -->
 <title>Feito Aquí Media | Contenido para restaurantes en Vigo que llena mesas</title>
-<meta name="description" content="Creadores de contenido especializados SOLO en restaurantes de Vigo y Galicia. Vídeos, reels y fotos que llenan mesas. Desde 20€. Entrega en 48h.">
+<meta name="description" content="Creadores de contenido especializados SOLO en restaurantes de Vigo y Galicia. Vídeos, reels y fotos que llenan mesas. Programa Fundadores: 200€/mes. Solo 3 plazas disponibles.">
 <meta name="keywords" content="contenido para restaurantes Vigo, marketing para restaurantes Galicia, reels para restaurantes, vídeos gastronómicos Vigo, fotógrafo gastronómico Vigo, community manager restaurantes Vigo, marketing gastronómico Galicia">
 <meta name="author" content="Feito Aquí Media">
 <meta name="robots" content="index, follow">
@@ -15,7 +15,7 @@
 <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Feito Aquí Media | Contenido para restaurantes que llena mesas">
-<meta property="og:description" content="Especialistas en contenido para restaurantes de Vigo. Vídeos, reels y fotos desde 20€. Tu restaurante, lleno.">
+<meta property="og:description" content="Especialistas en contenido para restaurantes de Vigo. Programa Fundadores con 50% OFF vitalicio. Solo 3 plazas disponibles.">
 <meta property="og:image" content="https://feitoaquimedia.es/og-image.jpg">
 <meta property="og:url" content="https://feitoaquimedia.es/">
 <meta property="og:site_name" content="Feito Aquí Media">
@@ -24,7 +24,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Feito Aquí Media | Contenido para restaurantes en Vigo">
-<meta name="twitter:description" content="Especialistas en restaurantes. Vídeos y fotos desde 20€. Entrega en 48h.">
+<meta name="twitter:description" content="Especialistas en restaurantes de Vigo. Programa Fundadores: 50% OFF vitalicio. Solo 3 plazas.">
 <meta name="twitter:image" content="https://feitoaquimedia.es/og-image.jpg">
 
 
@@ -259,15 +259,16 @@
            PACKS
         ======================================== */
         .packs { padding: 100px 0; background: var(--dark-2); }
-        .packs-grid { 
+  .packs-grid { 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 24px; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 32px; 
     margin-bottom: 40px; 
-    max-width: 1100px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
+
 
         .pack-card { background: var(--dark-3); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-lg); padding: 32px 24px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: all var(--transition); }
         .pack-card:hover { border-color: rgba(233,69,96,0.35); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
@@ -533,10 +534,11 @@
            RESPONSIVE
         ======================================== */
         @media (max-width: 1024px) {
-            .packs-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .solucion-grid { gap: 40px; }
-        }
+    .packs-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .solucion-grid { gap: 40px; }
+}
+
         @media (max-width: 768px) {
             .nav-desktop { display: none; }
             .hamburger { display: flex; }
@@ -1578,93 +1580,77 @@ Data de desativação: 21/04/2026
         </section>
 
         <!-- Sección: Packs y Precios -->
-        <section id="packs" class="packs">
-            <div class="container">
-                <div class="section-header animate-in">
-                    <span class="section-tag">💰 Planes claros, sin sorpresas</span>
-                    <h2 class="section-title">Elige el plan que mejor se adapta a tu restaurante</h2>
-                    <p class="section-subtitle">Sin permanencias. Sin contratos raros. Si no te gusta, lo dejas.</p>
+        <!-- Sección: Packs y Precios -->
+<section id="packs" class="packs">
+    <div class="container">
+        <div class="section-header animate-in">
+            <span class="section-tag">💰 Planes claros, sin sorpresas</span>
+            <h2 class="section-title">Elige el plan que mejor se adapta a tu restaurante</h2>
+            <p class="section-subtitle">Sin permanencias. Sin contratos raros. Si no te gusta, lo dejas.</p>
+        </div>
+        <div class="packs-grid">
+            <!-- PACK CRECIMIENTO (MÁS POPULAR) -->
+            <div class="pack-card pack-simple pack-featured animate-in">
+                <div class="pack-badge badge-popular">⭐ MÁS POPULAR</div>
+                <h3 class="pack-name">Pack Crecimiento</h3>
+                <div class="pack-price">
+                    <span class="price-amount">497€<small style="font-size:1rem;color:var(--light-muted);font-weight:500">/mes</small></span>
+                    <p class="price-note">mensual · sin permanencia</p>
                 </div>
-                <div class="packs-grid">
-                    <div class="pack-card pack-prueba animate-in">
-                        <div class="pack-badge badge-popular">⭐ MÁS POPULAR</div>
-                        <h3 class="pack-name">Pack Prueba</h3>
-                        <div class="pack-price">
-                            <span class="price-amount">20€ - 35€</span>
-                            <p class="price-note">pago único · sin compromiso</p>
-                        </div>
-                        <div class="pack-divider"></div>
-                        <p class="pack-highlight" style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px"><em>Para probar sin compromiso</em></p>
-                        <ul class="pack-features">
-                            <li><span class="check">✓</span> 1 sesión de grabación en tu local (2h)</li>
-                            <li><span class="check">✓</span> 5 vídeos cortos optimizados para Reels/TikTok</li>
-                            <li><span class="check">✓</span> 5 fotos profesionales de tus platos</li>
-                            <li><span class="check">✓</span> Edición profesional con música y textos</li>
-                            <li><span class="check">✓</span> Entrega en 5 días laborables</li>
-                            <li><span class="check">✓</span> 1 revisión incluida</li>
-                        </ul>
-                        <div class="pack-divider"></div>
-                        <p class="pack-highlight"><em>Ideal para restaurantes que quieren ver resultados antes de comprometerse.</em></p>
-                        <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20Quiero%20el%20Pack%20Prueba.%20%C2%BFMe%20cuentas%20c%C3%B3mo%3F" class="btn btn-primary pack-btn" target="_blank">Empezar con el Pack Prueba →</a>
-                    </div>
-                    <div class="pack-card pack-simple animate-in" style="transition-delay:0.1s">
-                        <h3 class="pack-name">Pack Crecimiento</h3>
-                        <div class="pack-price">
-                            <span class="price-amount">Consultar</span>
-                            <p class="price-note">mensual · sin permanencia</p>
-                        </div>
-                        <div class="pack-divider"></div>
-                        <p class="pack-highlight" style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px"><em>Para crecer en serio</em></p>
-                        <ul class="pack-features">
-                            <li><span class="check">✓</span> 2 sesiones de grabación al mes</li>
-                            <li><span class="check">✓</span> 12 vídeos cortos (Reels/TikTok)</li>
-                            <li><span class="check">✓</span> 10 fotos profesionales</li>
-                            <li><span class="check">✓</span> Calendario editorial mensual</li>
-                            <li><span class="check">✓</span> Estrategia de hashtags y horarios</li>
-                            <li><span class="check">✓</span> Copywriting para captions</li>
-                            <li><span class="check">✓</span> 2 revisiones por pieza</li>
-                        </ul>
-                        <div class="pack-divider"></div>
-                        <p class="pack-highlight"><em>Ideal para restaurantes que quieren presencia constante en redes.</em></p>
-                        <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20Me%20interesa%20el%20Pack%20Crecimiento.%20%C2%BFMe%20cuentas%20c%C3%B3mo%3F" class="btn btn-primary pack-btn" target="_blank">Quiero crecer →</a>
-                    </div>
-                    <div class="pack-card pack-semanal pack-featured animate-in" style="transition-delay:0.2s">
-                        <div class="pack-badge">🏆 EL ARSENAL COMPLETO</div>
-                        <h3 class="pack-name">Pack Restaurante Lleno</h3>
-                        <div class="pack-price">
-                            <span class="price-amount">Consultar</span>
-                            <p class="price-note">mensual · sin permanencia</p>
-                        </div>
-                        <div class="pack-divider"></div>
-                        <p class="pack-highlight" style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px"><em>Para dominar tu zona</em></p>
-                        <ul class="pack-features">
-                            <li><span class="check">✓</span> 4 sesiones de grabación al mes</li>
-                            <li><span class="check">✓</span> 20+ vídeos cortos</li>
-                            <li><span class="check">✓</span> 15 fotos profesionales</li>
-                            <li><span class="check">✓</span> Gestión completa de 1 red social</li>
-                            <li><span class="check">✓</span> Estrategia mensual personalizada</li>
-                            <li><span class="check">✓</span> Copywriting para todas las publicaciones</li>
-                            <li><span class="check">✓</span> Análisis de métricas mensual</li>
-                            <li><span class="check">✓</span> Soporte prioritario por WhatsApp</li>
-                            <li><span class="check">✓</span> Revisiones ilimitadas</li>
-                        </ul>
-                        <div class="pack-divider"></div>
-                        <p class="pack-highlight"><em>Ideal para restaurantes que quieren dominar su zona.</em></p>
-                        <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20Quiero%20el%20Pack%20Restaurante%20Lleno.%20%C2%BFMe%20cuentas%20c%C3%B3mo%3F" class="btn btn-primary pack-btn" target="_blank">Quiero el pack completo →</a>
-                    </div>
-                     
-                </div>
-                <div class="packs-helper animate-in">
-                    <p class="helper-text">🤔 ¿No sabes cuál elegir? Escríbenos por WhatsApp y te ayudamos a elegir el plan perfecto para tu restaurante.</p>
-                    <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20No%20s%C3%A9%20qu%C3%A9%20plan%20me%20conviene%20para%20mi%20restaurante.%20%C2%BFMe%20ayud%C3%A1is%3F" class="btn btn-helper" target="_blank">Hablar por WhatsApp</a>
-                </div>
-                <div class="trust-badges animate-in">
-                    <div class="trust-item"><span class="trust-icon">🔒</span><p>Sin contratos ni permanencia</p></div>
-                    <div class="trust-item"><span class="trust-icon">⚡</span><p>Entrega en 48h o menos</p></div>
-                    <div class="trust-item"><span class="trust-icon">💬</span><p>Atención directa por WhatsApp</p></div>
-                </div>
+                <div class="pack-divider"></div>
+                <p class="pack-highlight" style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px"><em>Para crecer en serio</em></p>
+                <ul class="pack-features">
+                    <li><span class="check">✓</span> 2 sesiones de grabación al mes</li>
+                    <li><span class="check">✓</span> 12 vídeos cortos (Reels/TikTok)</li>
+                    <li><span class="check">✓</span> 10 fotos profesionales</li>
+                    <li><span class="check">✓</span> Calendario editorial mensual</li>
+                    <li><span class="check">✓</span> Estrategia de hashtags y horarios</li>
+                    <li><span class="check">✓</span> Copywriting para captions</li>
+                    <li><span class="check">✓</span> 2 revisiones por pieza</li>
+                </ul>
+                <div class="pack-divider"></div>
+                <p class="pack-highlight"><em>Ideal para restaurantes que quieren presencia constante en redes.</em></p>
+                <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20Me%20interesa%20el%20Pack%20Crecimiento%20(497%E2%82%AC%2Fmes).%20%C2%BFMe%20cuentas%20c%C3%B3mo%3F" class="btn btn-primary pack-btn" target="_blank">Quiero crecer →</a>
             </div>
-        </section>
+
+            <!-- PACK RESTAURANTE LLENO -->
+            <div class="pack-card pack-semanal animate-in" style="transition-delay:0.1s">
+                <div class="pack-badge">🏆 EL ARSENAL COMPLETO</div>
+                <h3 class="pack-name">Pack Restaurante Lleno</h3>
+                <div class="pack-price">
+                    <span class="price-amount">997€<small style="font-size:1rem;color:var(--light-muted);font-weight:500">/mes</small></span>
+                    <p class="price-note">mensual · sin permanencia</p>
+                </div>
+                <div class="pack-divider"></div>
+                <p class="pack-highlight" style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:12px"><em>Para dominar tu zona</em></p>
+                <ul class="pack-features">
+                    <li><span class="check">✓</span> 4 sesiones de grabación al mes</li>
+                    <li><span class="check">✓</span> 20+ vídeos cortos</li>
+                    <li><span class="check">✓</span> 15 fotos profesionales</li>
+                    <li><span class="check">✓</span> Gestión completa de 1 red social</li>
+                    <li><span class="check">✓</span> Estrategia mensual personalizada</li>
+                    <li><span class="check">✓</span> Copywriting para todas las publicaciones</li>
+                    <li><span class="check">✓</span> Análisis de métricas mensual</li>
+                    <li><span class="check">✓</span> Soporte prioritario por WhatsApp</li>
+                    <li><span class="check">✓</span> Revisiones ilimitadas</li>
+                </ul>
+                <div class="pack-divider"></div>
+                <p class="pack-highlight"><em>Ideal para restaurantes que quieren dominar su zona.</em></p>
+                <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20Quiero%20el%20Pack%20Restaurante%20Lleno%20(997%E2%82%AC%2Fmes).%20%C2%BFMe%20cuentas%20c%C3%B3mo%3F" class="btn btn-primary pack-btn" target="_blank">Quiero el pack completo →</a>
+            </div>
+        </div>
+        <div class="packs-helper animate-in">
+            <p class="helper-text">🤔 ¿No sabes cuál elegir? Escríbenos por WhatsApp y te ayudamos a elegir el plan perfecto para tu restaurante.</p>
+            <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20No%20s%C3%A9%20qu%C3%A9%20plan%20me%20conviene%20para%20mi%20restaurante.%20%C2%BFMe%20ayud%C3%A1is%3F" class="btn btn-helper" target="_blank">Hablar por WhatsApp</a>
+        </div>
+        <div class="trust-badges animate-in">
+            <div class="trust-item"><span class="trust-icon">🔒</span><p>Sin contratos ni permanencia</p></div>
+            <div class="trust-item"><span class="trust-icon">⚡</span><p>Entrega en 48h o menos</p></div>
+            <div class="trust-item"><span class="trust-icon">💬</span><p>Atención directa por WhatsApp</p></div>
+        </div>
+    </div>
+</section>
+
 
         <!-- Sección: Cómo Funciona -->
         <section id="como-funciona" class="como-funciona">
@@ -1751,9 +1737,10 @@ Data de desativação: 21/04/2026
                     </div>
                     <div class="faq-column" id="faq-column-right">
                         <div class="accordion-item open">
-                            <button class="accordion-header"><span class="accordion-title">¿De verdad el pack empieza en 20€? ¿Cuál es el truco?</span><span class="accordion-icon">+</span></button>
-                            <div class="accordion-content"><p>No hay truco. El Pack Prueba a 20-35€ es real. Lo ofrecemos a ese precio porque sabemos que cuando veas la calidad, vas a querer repetir. Es nuestra forma de demostrarte que esto funciona. Sin compromiso, sin permanencia.</p></div>
-                        </div>
+    <button class="accordion-header"><span class="accordion-title">¿Por qué los precios son más altos que otras agencias?</span><span class="accordion-icon">+</span></button>
+    <div class="accordion-content"><p>Porque NO somos una agencia genérica. Somos especialistas SOLO en restaurantes. Nuestro contenido está diseñado para una sola cosa: <strong>llenar tus mesas</strong>. Mientras otros te cobran 200€ por publicar fotos genéricas, nosotros te entregamos una estrategia completa que se paga sola con 2-3 reservas extra al mes. Calidad premium, resultados reales.</p></div>
+</div>
+
                         <div class="accordion-item">
                             <button class="accordion-header"><span class="accordion-title">¿Hay algún contrato o permanencia?</span><span class="accordion-icon">+</span></button>
                             <div class="accordion-content"><p>No. Cero contratos, cero permanencia, cero letra pequeña. Cada pack se paga de forma individual. Si te gusta, repites. Si no, tan amigos. Así de simple.</p></div>
@@ -1798,11 +1785,12 @@ Data de desativação: 21/04/2026
                 <a href="https://wa.me/34692231872?text=Hola%20%F0%9F%91%8B%20Quiero%20llenar%20mi%20restaurante%20de%20clientes.%20%C2%BFMe%20cuentas%20c%C3%B3mo%3F" class="btn btn-cta-final" target="_blank">Quiero empezar hoy — Escríbenos →</a>
                 <p class="cta-micro-text">💬 Respondemos en menos de 2 horas · Sin compromiso</p>
                 <div class="cta-trust-row">
-                    <span>🔒 Sin contratos</span><span>·</span>
-                    <span>⚡ Entrega en 48h</span><span>·</span>
-                    <span>💬 Atención directa</span><span>·</span>
-                    <span>💰 Desde 20€</span>
-                </div>
+    <span>🔒 Sin contratos</span><span>·</span>
+    <span>⚡ Entrega en 48h</span><span>·</span>
+    <span>💬 Atención directa</span><span>·</span>
+    <span>👑 Calidad premium</span>
+</div>
+
                 <p class="cta-final-tagline">— FEITO AQUÍ MEDIA · Contenido profesional, hecho en tu barrio.</p>
             </div>
         </section>
@@ -1883,15 +1871,16 @@ Data de desativação: 21/04/2026
                     </div>
                     <p class="footer-tagline" style="margin-top:12px;font-size:0.85rem">📍 Vigo, Galicia &nbsp;|&nbsp; 📧 feitoaquimedia@gmail.com</p>
                 </div>
-                <div class="footer-column">
-                    <h4 class="footer-title">Servicios</h4>
-                    <ul class="footer-links">
-                        <li><a href="#packs">Pack Prueba</a></li>
-                        <li><a href="#packs">Pack Crecimiento</a></li>
-                        <li><a href="#packs">Pack Restaurante Lleno</a></li>
-                        <li><a href="#packs">Todos los planes</a></li>
-                    </ul>
-                </div>
+               <div class="footer-column">
+    <h4 class="footer-title">Servicios</h4>
+    <ul class="footer-links">
+        <li><a href="#fundadores">🏆 Programa Fundadores</a></li>
+        <li><a href="#packs">Pack Crecimiento</a></li>
+        <li><a href="#packs">Pack Restaurante Lleno</a></li>
+        <li><a href="#packs">Todos los planes</a></li>
+    </ul>
+</div>
+
                 <div class="footer-column">
                     <h4 class="footer-title">Empresa</h4>
                     <ul class="footer-links">
