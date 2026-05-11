@@ -8,7 +8,8 @@
         /* FIX 2: Resolvendo o problema das âncoras escondidas pelo header fixo */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px; /* Compensa a altura do header fixo na navegação */
+            /* Aumentei para 120px para garantir que o título respire bem abaixo do header */
+            scroll-padding-top: 120px; 
         }
 
         :root {
@@ -79,19 +80,19 @@
             color: var(--primary);
         }
 
-        /* HERO SECTION - Criativa e Focada na Dor/Solução */
+        /* HERO SECTION */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 5% 60px; /* Padding top maior para não grudar no header */
+            padding: 120px 5% 60px;
             background: var(--dark);
             color: white;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Importante para o fundo não vazar */
         }
 
-        /* FIX 1: Efeito Parallax seguro apenas no background pseudo-elemento */
+        /* FIX 1: Efeito Parallax seguro apenas no pseudo-elemento de fundo */
         .hero::before {
             content: '';
             position: absolute;
@@ -99,9 +100,9 @@
             background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), 
                         url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop') center/cover;
             z-index: 1;
-            /* As variáveis --move-x e --move-y são injetadas pelo JS abaixo */
+            /* O movimento acontece apenas aqui no ::before, mantendo a .hero estática */
             transform: translate(var(--move-x, 0), var(--move-y, 0)) scale(1.05);
-            transition: transform 0.1s ease-out; /* Suavidade no movimento do mouse */
+            transition: transform 0.1s ease-out;
             will-change: transform;
             pointer-events: none;
         }
@@ -141,7 +142,6 @@
             display: inline-block;
         }
 
-        /* Sublinhado angular não convencional (Design Moderno) */
         .hero h1 span::after {
             content: '';
             position: absolute;
@@ -165,7 +165,6 @@
             padding-left: 20px;
         }
 
-        /* BOTÕES CTA COM EFEITO PSICOLÓGICO DE VARREDURA */
         .cta-btn {
             display: inline-flex;
             align-items: center;
@@ -225,7 +224,6 @@
             color: white;
         }
 
-        /* PROVA SOCIAL */
         .social-proof {
             background: white;
             padding: 40px 5%;
@@ -263,7 +261,6 @@
             color: var(--secondary);
         }
 
-        /* SEÇÃO DE OFERTA / VALOR (CONTRASTE COGNITIVO) */
         .offer {
             padding: 100px 5%;
             background: var(--light);
@@ -306,7 +303,6 @@
             transition: transform 0.3s, border-color 0.3s;
         }
 
-        /* Gatilho de Destaque / Efeito Isca */
         .card.premium {
             border-color: var(--primary);
             transform: scale(1.05);
@@ -356,7 +352,7 @@
             color: var(--primary);
             font-weight: 700;
             margin-bottom: 30px;
-            transform: rotate(-2deg); /* Rotação sutil para quebrar o padrão de leitura e reter atenção */
+            transform: rotate(-2deg);
         }
 
         .features {
@@ -379,13 +375,11 @@
             font-weight: bold;
         }
 
-        /* ANIMAÇÕES INICIAIS */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* RESPONSIVO */
         @media (max-width: 768px) {
             header { padding: 15px 5%; flex-direction: column; gap: 15px; }
             nav ul { gap: 15px; }
@@ -393,7 +387,7 @@
             .pain-point { font-size: 1.1rem; }
             .card.premium { transform: scale(1); z-index: 1; margin-top: 20px;}
             .pricing-cards { flex-direction: column; }
-            .hero::before { background-attachment: scroll; } /* Melhor performance no mobile */
+            .hero::before { background-attachment: scroll; } 
         }
     </style>
 </head>
@@ -414,19 +408,16 @@
         <div class="hero-content">
             <div class="badge">Estratégia Visual</div>
             <h1>A sua imagem atual está a custar-lhe <span>clientes todos os dias.</span></h1>
-            <!-- Gatilho da Dor + Contraste -->
             <p class="pain-point">Esqueça as fotos amadoras que desvalorizam o seu produto. O cérebro humano julga a qualidade do seu serviço em 0.05 segundos com base na sua imagem.</p>
             
-            <!-- CTA com Texto Psicológico Pré-Pronto (Esforço Mínimo) -->
+            <!-- Link atualizado com número da Espanha e código limpo -->
             <a href="https://wa.me/34692231872?text=Ol%C3%A1!%20Percebi%20que%20minhas%20fotos%20precisam%20de%20um%20upgrade.%20Gostaria%20de%20saber%20mais%20sobre%20como%20transformar%20minha%20imagem%20para%20vender%20mais." class="cta-btn cta-whatsapp" target="_blank">
                 Quero Transmitir Autoridade Agora
             </a>
-            <!-- Gatilho de Escassez -->
             <span class="urgency-text">Apenas <strong>2 vagas</strong> disponíveis para este mês.</span>
         </div>
     </section>
 
-    <!-- Gatilho de Prova Social (Autoridade) -->
     <section class="social-proof">
         <p>Marcas que pararam de perder vendas e começaram a converter:</p>
         <div class="logos">
@@ -442,7 +433,6 @@
         <p class="offer-subtitle">Enquanto o seu concorrente usa fotos de banco de imagens, nós criamos um arsenal visual exclusivo que torna o seu preço irrelevante na mente do consumidor.</p>
 
         <div id="precos" class="pricing-cards">
-            <!-- Plano 1 (Ancoragem) -->
             <div class="card">
                 <h3>Essencial</h3>
                 <div class="price">€197<span>/sessão</span></div>
@@ -453,10 +443,10 @@
                     <li>Entrega em 5 dias úteis</li>
                     <li>Licença de uso comercial</li>
                 </ul>
+                <!-- Link atualizado -->
                 <a href="https://wa.me/34692231872?text=Ol%C3%A1,%20gostaria%20de%20agendar%20o%20plano%20Essencial." class="cta-btn" style="width: 100%; justify-content: center; background: var(--dark);" target="_blank">Reservar Essencial</a>
             </div>
 
-            <!-- Plano 2 - Destaque (Alta Percepção de Valor) -->
             <div class="card premium">
                 <h3>Domínio Visual</h3>
                 <div class="price">€297<span>/sessão</span></div>
@@ -468,26 +458,23 @@
                     <li>Fotos Otimizadas para Instagram/Web</li>
                     <li><strong>Bónus:</strong> 3 Vídeos Curtos (Reels)</li>
                 </ul>
+                <!-- Link atualizado -->
                 <a href="https://wa.me/34692231872?text=Ol%C3%A1,%20n%C3%A3o%20quero%20perder%20a%20oportunidade!%20Quero%20agendar%20o%20plano%20Dom%C3%ADnio%20Visual%20com%20o%20b%C3%B3nus." class="cta-btn cta-whatsapp" style="width: 100%; justify-content: center;" target="_blank">Agendar e Garantir Bónus</a>
             </div>
         </div>
     </section>
 
     <script>
-        // FIX 1: Parallax Corrigido e Otimizado
-        // Movemos APENAS o background via variáveis CSS injetadas no .hero.
-        // O pseudo-elemento no CSS capta essas variáveis, criando o efeito sem quebrar a seção.
-        
+        // O script calcula as posições e injeta nas variáveis, 
+        // mas a magia só acontece no ::before através do CSS.
+        // A section .hero em si fica 100% ancorada.
         const heroSection = document.querySelector('.hero');
         
-        // Só ativa o efeito em telas maiores (desktop) para poupar bateria em mobile
         if(window.innerWidth > 768) {
             document.addEventListener('mousemove', (e) => {
-                // Calcula a posição do mouse em relação ao centro da tela (limite de 15px de movimento)
                 const xAxis = (e.clientX / window.innerWidth - 0.5) * 15; 
                 const yAxis = (e.clientY / window.innerHeight - 0.5) * 15;
                 
-                // Injeta os valores nas variáveis CSS
                 heroSection.style.setProperty('--move-x', `${xAxis}px`);
                 heroSection.style.setProperty('--move-y', `${yAxis}px`);
             });
