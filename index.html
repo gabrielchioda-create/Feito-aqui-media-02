@@ -1,248 +1,459 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiência Premium</title>
-    <!-- Fonte minimalista e elegante -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #d4af37; /* Dourado suave/Premium */
-            --primary-hover: #bda036;
-            --text-light: #f8f8f8;
-            --text-muted: #a0a0a0;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Studio Gastronômico | Alta Conversão</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg-dark: #070707;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --primary: #FF5722;
+  --primary-hover: #F44336;
+  --text-light: #F5F5F7;
+  --text-muted: #A1A1A6;
+  --glass-blur: blur(16px);
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
+/* Reset */
 
-        body, html {
-            height: 100%;
-            width: 100%;
-            overflow: hidden; /* Evita rolagem na entrada */
-            background-color: #050505;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  scroll-behavior: smooth;
+}
 
-        /* --- BACKGROUND DINÂMICO E SUTIL --- */
-        .bg-container {
-            position: fixed;
-            top: -5%; left: -5%; 
-            width: 110vw; height: 110vh; /* Margem extra para o efeito parallax */
-            z-index: -2;
-            transition: transform 0.1s ease-out;
-        }
+/* Corpo */
 
-        .bg-image {
-            width: 100%; 
-            height: 100%;
-            /* Imagem de textura abstrata/dark premium */
-            background-image: url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            /* Efeito Cinemagraph: Movimento de escala hiper-lento */
-            animation: breathe 25s infinite alternate ease-in-out;
-        }
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
 
-        /* --- O "TOQUE LEVE": CAMADA DE FOCO (OVERLAY) --- */
-        .bg-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: -1;
-            /* Gradiente radial: 30% escuro no centro, 85% escuro nas bordas */
-            background: radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 0.3) 0%, rgba(5, 5, 5, 0.85) 100%);
-            /* Desfoque leve: não destrói a imagem, apenas suaviza */
-            backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(2px);
-        }
+/* Fundo animado discreto */
 
-        /* --- CONTAINER PRINCIPAL --- */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-            perspective: 1000px;
-        }
+.fundo-animado {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -2;
+  background: radial-gradient(circle at 50% 0%, rgba(255,87,34,0.1) 0%, transparent 50%);
+  /* Pequena animação de leve movimento */
+  animation: movimentoFundo 30s ease-in-out infinite alternate;
+}
+@keyframes movimentoFundo {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(10px, -10px); }
+}
 
-        /* --- GLASSMORPHISM CARD (A MÁGICA ACONTECE AQUI) --- */
-        .glass-card {
-            background: rgba(20, 20, 20, 0.45);
-            /* Desfoque forte apenas dentro do cartão */
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            border-left: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 4rem 3rem;
-            border-radius: 24px;
-            text-align: center;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-            
-            /* Animação de Entrada */
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-            animation: fadeUpGlass 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
-            transition: transform 0.1s ease-out; /* Para o Parallax 3D */
-        }
+/* Vinheta sutil (overlay escuro) */
 
-        /* Tipografia */
-        .badge {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            color: var(--primary);
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
+.overlay-vinheta {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(7,7,7,0.3) 0%, rgba(7,7,7,0.9) 100%);
+  z-index: -1;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+}
 
-        h1 {
-            color: var(--text-light);
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
+/* Header */
 
-        h1 span {
-            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(7, 7, 7, 0.6);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
 
-        p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; }
+.logo span { color: var(--primary); }
 
-        /* --- BOTÃO DE ALTA CONVERSÃO --- */
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 36px;
-            background: var(--text-light);
-            color: #000;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
-        }
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+nav a:hover { color: var(--primary); }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
-            transition: left 0.5s ease;
-        }
+/* Botões de ação */
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
-            background: var(--primary);
-        }
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5);
+  background: var(--primary-hover);
+}
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
+/* Hero com máscara de vinheta ajustada e esmaecida */
 
-        /* --- ANIMAÇÕES KEYFRAMES --- */
-        @keyframes breathe {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.08); }
-        }
+section.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  /* Gradiente linear adicionado sobre a imagem para criar o efeito esmaecido e reduzir a poluição visual */
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+}
+section.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  /* Foco central levemente mais opaco para garantir a legibilidade absoluta do texto */
+  background: radial-gradient(circle at 50% 50%, rgba(7,7,7,0.4) 0%, rgba(7,7,7,0.95) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
 
-        @keyframes fadeUpGlass {
-            0% { 
-                opacity: 0; 
-                transform: translateY(40px) scale(0.95); 
-                filter: blur(10px);
-            }
-            100% { 
-                opacity: 1; 
-                transform: translateY(0) scale(1);
-                filter: blur(0);
-            }
-        }
+/* Conteúdo da Hero */
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.4rem; }
-            .glass-card { padding: 3rem 2rem; width: 95%; }
-        }
-    </style>
+.hero-content {
+  max-width: 800px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+  text-align: center;
+  color: var(--text-light);
+}
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Títulos, textos */
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+h1 span {
+  background: linear-gradient(45deg, #FF5722, #FF9800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Seções e Cards */
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+section:not(.hero) {
+  padding: 100px 5%;
+  position: relative;
+  z-index: 5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition: transform 0.3s, border-color 0.3s;
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 87, 34, 0.5);
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+.price span {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+.features {
+  list-style: none;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.features li {
+  margin-bottom: 10px;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+}
+.features li::before {
+  content: '✓';
+  color: var(--primary);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Botão do WhatsApp Flutuante */
+.float-wa {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.float-wa:hover {
+  transform: scale(1.1);
+  background-color: #20b958;
+}
+
+/* Rodapé */
+
+footer {
+  padding: 30px 5%;
+  text-align: center;
+  background: #020202;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: 60px;
+}
+
+/* Animações de elementos na rolagem */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade */
+
+@media(max-width: 768px){
+  h1 { font-size: 2.5rem; }
+  nav { display: none; }
+}
+
+</style>
 </head>
 <body>
 
-    <!-- Fundo Sutil -->
-    <div class="bg-container" id="bg-parallax">
-        <div class="bg-image"></div>
+<!-- Fundo com elementos de luzes sutis -->
+<div class="fundo-animado"></div>
+<div class="overlay-vinheta"></div>
+
+<!-- Cabeçalho/FONTE FIXADA -->
+<header id="header">
+  <a class="logo" href="#">Visual<b>Bite</b></a>
+  <nav>
+    <a href="#como-funciona">Cómo Funciona</a>
+    <a href="#packs">Packs</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a class="btn" href="#packs">Reserva</a>
+</header>
+
+<!-- Hero com foco na imagem e efeito de vinheta esmaecida -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Tu comida es increíble.<br><span>El problema es que nadie lo sabe.</span></h1>
+    <p>Transformamos tu restaurante en una marca que encanta y vende sin esfuerzo. Fotografías y videos en alta calidad en tiempo récord.</p>
+    <a class="btn" href="#packs">Ver Packs</a>
+  </div>
+</section>
+
+<!-- Seção como funciona -->
+<section id="como-funciona">
+  <h2 class="section-title reveal">Un proceso sin estrés</h2>
+  <div class="grid">
+    <div class="card reveal">
+      <h3>1. Estrategia</h3>
+      <p style="color: var(--text-muted)">Creamos un plan gastronómico y visual a medida. Nada al azar.</p>
     </div>
-    <div class="bg-overlay"></div>
+    <div class="card reveal" style="transition-delay: 0.1s;">
+      <h3>2. Producción</h3>
+      <p style="color: var(--text-muted)">Rodamos en tu restaurante con luz de cine, en horas de menos afluencia.</p>
+    </div>
+    <div class="card reveal" style="transition-delay: 0.2s;">
+      <h3>3. Entrega</h3>
+      <p style="color: var(--text-muted)">En 72h tienes el material listo para publicar y atraer clientes.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Conteúdo Principal -->
-    <main class="hero-section">
-        <div class="glass-card" id="glass-card">
-            <div class="badge">Acesso Exclusivo</div>
-            <h1>Descubra o <span>Extraordinário.</span></h1>
-            <p>Uma experiência imersiva projetada para impressionar. Sem distrações, apenas foco naquilo que realmente importa para o seu resultado.</p>
-            <a href="#" class="cta-button">Desbloquear Agora</a>
-        </div>
-    </main>
+<!-- Packs (Precios) -->
+<section id="packs">
+  <h2 class="section-title reveal">Inversión en tu imagen</h2>
+  <div class="grid">
+    <div class="card reveal">
+      <h3>Starter</h3>
+      <div class="price">€290<span>/sesión</span></div>
+      <ul class="features">
+        <li>Sesión de 2h</li>
+        <li>15 Fotos HD</li>
+        <li>Retoque profesional</li>
+        <li>Entrega en 72h</li>
+      </ul>
+      <a class="btn" href="#contacto">Elegir</a>
+    </div>
+    <div class="card reveal" style="border-color: var(--primary); transform: scale(1.05); z-index: 10;">
+      <div class="popular-badge">MÁS VENDIDO</div>
+      <h3>Growth Visual</h3>
+      <div class="price">€490<span>/sesión</span></div>
+      <ul class="features">
+        <li>Sesión de 4h</li>
+        <li>30 Fotos HD</li>
+        <li>3 Reels / TikToks</li>
+        <li>Dirección artística</li>
+        <li>Entrega 48h</li>
+      </ul>
+      <a class="btn" href="#contacto">Elegir Growth</a>
+    </div>
+    <div class="card reveal">
+      <h3>Premium / Cadenas</h3>
+      <div class="price">Personalizado</div>
+      <ul class="features">
+        <li>Rodaje en un día completo</li>
+        <li>Video cinematográfico</li>
+        <li>Modelos y actores</li>
+        <li>Derechos totales</li>
+      </ul>
+      <a class="btn" href="#contacto">Hablar con Ventas</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Script de Inovação: Efeito Parallax 3D suave com o movimento do mouse -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const bg = document.getElementById('bg-parallax');
-            const card = document.getElementById('glass-card');
-            
-            // Verifica se não é dispositivo móvel para aplicar o efeito
-            if (window.innerWidth > 768) {
-                document.addEventListener('mousemove', (e) => {
-                    const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-                    const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
-                    
-                    // Move o fundo sutilmente na direção oposta
-                    bg.style.transform = `translate(${xAxis * 0.5}px, ${yAxis * 0.5}px)`;
-                    
-                    // Inclina o cartão de vidro sutilmente para dar efeito 3D
-                    // Usamos transform base além do rotateX/Y para não sobrescrever a animação de entrada
-                    const baseTransform = "translateY(0) scale(1)";
-                    card.style.transform = `${baseTransform} rotateY(${xAxis * -0.5}deg) rotateX(${yAxis * 0.5}deg)`;
-                });
+<!-- Enlace flotante WhatsApp -->
+<a class="float-wa" href="https://wa.me/34XXXXXXXXX" target="_blank" title="Chatear por WhatsApp">
+  <!-- Ícone SVG do WhatsApp -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+  </svg>
+</a>
 
-                // Reseta a rotação quando o mouse sai da tela
-                document.addEventListener('mouseleave', () => {
-                    bg.style.transform = `translate(0px, 0px)`;
-                    card.style.transform = `translateY(0) scale(1) rotateY(0deg) rotateX(0deg)`;
-                });
-            }
-        });
-    </script>
+<!-- Script para efeitos do site, scroll reveal -->
+<script>
+// ocultar/mostrar menu ao rolar
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 50) {
+    header.style.background = 'rgba(7,7,7,0.9)';
+    header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+  } else {
+    header.style.background = 'rgba(7,7,7,0.6)';
+    header.style.boxShadow = 'none';
+  }
+});
+
+// Scroll reveal
+const elementosRevelar = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('active');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+elementosRevelar.forEach(el => observer.observe(el));
+
+// Parallax leve ao mover o mouse na seção herói
+const fundoFoco = document.querySelector('.hero');
+if (window.innerWidth > 768) {
+  document.addEventListener('mousemove', e => {
+    const x = (window.innerWidth/2 - e.clientX) / 50;
+    const y = (window.innerHeight/2 - e.clientY) / 50;
+    fundoFoco.style.transform = `translate(${x*0.5}px, ${y*0.5}px)`;
+  });
+  document.addEventListener('mouseleave', () => {
+    fundoFoco.style.transform = 'translate(0, 0)';
+  });
+}
+</script>
 
 </body>
 </html>
