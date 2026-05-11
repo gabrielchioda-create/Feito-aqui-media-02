@@ -3,520 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LISTO.AQUÍ MEDIA - Creadores de Contenido en Vigo</title>
+    <title>Studio Gastronômico | Alta Conversión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* ====================================================
-           RESET & VARIÁVEIS 
-           ==================================================== */
         :root {
-            --bg-color: #0a0a0a; 
-            --bg-card: #141414;
-            --text-main: #f3f4f6; 
-            --text-muted: #9ca3af; 
-            --brand-color: #FF5722; 
-            --brand-hover: #E64A19;
-            --border-color: #27272a;
-        }
-
-        html {
-            scroll-behavior: smooth; /* Rolagem suave ao clicar no menu */
+            --bg-dark: #070707;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #FF5722; /* Laranja Habano */
+            --primary-hover: #F44336;
+            --text-light: #F5F5F7;
+            --text-muted: #A1A1A6;
+            --glass-blur: blur(16px);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
             overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, rgba(255,87,34,0.1) 0%, transparent 50%);
         }
 
-        /* ====================================================
-           CABEÇALHO E NAVEGAÇÃO
-           ==================================================== */
+        /* --- PRELOADER CINEMATOGRÁFICO --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease-in-out, visibility 1s;
+        }
+        
+        .loader-text {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-light);
+            overflow: hidden;
+            border-right: 2px solid var(--primary);
+            white-space: nowrap;
+            animation: typing 1.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 220px } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary); } }
+
+        /* --- HEADER GLASSMORPHISM --- */
         header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            top: 0;
+            background: rgba(7, 7, 7, 0.6);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid var(--card-border);
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
         }
 
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .logo span { color: var(--brand-color); }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; }
+        .logo span { color: var(--primary); }
+        
         nav a {
+            color: var(--text-light);
             text-decoration: none;
-            color: var(--text-main);
+            margin-left: 30px;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
         }
+        nav a:hover { color: var(--primary); }
 
-        nav a:hover { color: var(--brand-color); }
-
-        @media (max-width: 768px) {
-            nav ul { display: none; }
-        }
-
-        /* ====================================================
-           ESTRUTURA DE SEÇÕES (Global)
-           ==================================================== */
-        section {
-            padding: 100px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 15px;
+        /* --- BOTOES DE CONVERSÃO --- */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
             font-weight: 800;
-            letter-spacing: -1px;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
         }
 
-        .section-subtitle {
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5);
+            background: var(--primary-hover);
+        }
+
+        /* --- HERO SECTION CINEMATOGRÁFICA --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 60px;
-            font-size: 1.1rem;
+            padding: 0 20px;
+            position: relative;
+            /* Placeholder para uma foto ou vídeo muito escuro/elegante */
+            background: linear-gradient(to bottom, rgba(7,7,7,0.3) 0%, rgba(7,7,7,1) 100%), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
         }
 
+        .hero-content {
+            max-width: 800px;
+            opacity: 0; /* Começa invisível para animação de entrada */
+            transform: translateY(30px);
+            animation: heroReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 1.5s forwards;
+        }
+
+        @keyframes heroReveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(45deg, #FF5722, #FF9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* --- SEÇÕES & CARDS MODERNOS (SCROLL REVEAL) --- */
+        section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; }
+        
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        /* ====================================================
-           HERO SECTION (Topo)
-           ==================================================== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 150px;
-        }
-
-        .tagline {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            color: var(--text-muted);
-            border: 1px solid rgba(255,255,255,0.1);
-            width: fit-content;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            line-height: 1.1;
-            font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-        }
-
-        h1 .highlight { color: var(--brand-color); }
-
-        .hero-desc {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin-bottom: 40px;
-        }
-
-        .actions {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--brand-color);
-            color: #fff;
-            padding: 18px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform 0.2s, background 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
-            animation: pulse 2s infinite;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--brand-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s;
-        }
-
-        .btn-secondary:hover { color: var(--brand-color); }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.5); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 87, 34, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .trust-badges span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.03);
-            padding: 8px 12px;
-            border-radius: 6px;
-        }
-
-        .scarcity {
-            background: rgba(255, 87, 34, 0.1);
-            color: var(--brand-color);
-            padding: 12px 20px;
-            border-radius: 6px;
-            display: inline-block;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px dashed var(--brand-color);
-        }
-
-        /* ====================================================
-           CARDS E SEÇÕES ESPECÍFICAS
-           ==================================================== */
+        /* Efeito Glassmorphism nos Cards */
         .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 40px 30px;
-            border-radius: 12px;
-            transition: transform 0.3s, border-color 0.3s;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--brand-color);
+            transform: translateY(-10px);
+            border-color: rgba(255, 87, 34, 0.4);
         }
 
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        /* Pricing Especial */
-        .pack-card {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .pack-card.highlight {
-            border: 2px solid var(--brand-color);
-            position: relative;
-        }
-
-        .badge {
+        .card::before {
+            content: '';
             position: absolute;
-            top: -15px;
-            right: 20px;
-            background: var(--brand-color);
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,87,34,0.1) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+        .card:hover::before { opacity: 1; }
+
+        .card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+        .price { font-size: 2.5rem; font-weight: 800; color: var(--text-light); margin-bottom: 20px; }
+        .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+        
+        .features { list-style: none; margin-bottom: 30px; }
+        .features li { margin-bottom: 12px; color: var(--text-muted); font-size: 1rem; display: flex; align-items: center; }
+        .features li::before { content: '✓'; color: var(--primary); margin-right: 10px; font-weight: bold; }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px; right: -35px;
+            background: var(--primary);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: bold;
+            font-weight: 800;
+            padding: 5px 40px;
+            transform: rotate(45deg);
         }
 
-        .price {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin: 20px 0;
+        /* Classes para animação de scroll (Intersection Observer) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- FLOATING WHATSAPP --- */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
             color: white;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .float-wa:hover { transform: scale(1.1); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: normal;
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Em mobile ideal colocar menu hamburguer */
         }
-
-        ul.features {
-            list-style: none;
-            margin-bottom: 30px;
-            flex-grow: 1;
-        }
-
-        ul.features li {
-            margin-bottom: 12px;
-            color: var(--text-muted);
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn-full {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* FAQ */
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 25px 0;
-        }
-
-        .faq-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .faq-item p {
-            color: var(--text-muted);
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            padding: 60px 5%;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            margin-top: 100px;
-        }
-        
-        .footer-content h2 { margin-bottom: 20px; }
-        
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
-        <a href="#" class="logo">LISTO.AQUÍ<span>.</span></a>
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loader-text">Sirviendo...</div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="logo">Visual<span>Bite</span></div>
         <nav>
-            <ul>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#como-funciona">Cómo Funciona</a></li>
-                <li><a href="#packs">Packs</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
+            <a href="#como-funciona">Cómo Funciona</a>
+            <a href="#packs">Packs</a>
+            <a href="#contacto">Contacto</a>
         </nav>
-        <a href="#packs" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem; animation: none;">Pide tu Pack</a>
+        <a href="#packs" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Reservar Sesión</a>
     </header>
 
-    <!-- 1. HERO SECTION -->
-    <section class="hero" id="inicio">
-        <span class="tagline">🎬 Creadores de contenido para restaurantes en Vigo</span>
-        
-        <h1>Tu comida es increíble.<br>
-        <span class="highlight">El problema es que nadie lo sabe.</span></h1>
-        
-        <p class="hero-desc">Creamos el contenido (Reels, TikToks y Fotos) que hace que la gente pare de hacer scroll, se le haga agua la boca y reserve mesa en tu restaurante. Sin que tú pierdas un solo minuto de tu cocina.</p>
-        
-        <div class="actions">
-            <a href="#packs" class="btn-primary">Quiero llenar mi restaurante &rarr;</a>
-            <a href="#como-funciona" class="btn-secondary">Ver cómo funciona &darr;</a>
-        </div>
-
-        <div class="trust-badges">
-            <span>✅ Sin contratos de permanencia</span>
-            <span>📸 Grabamos en tu local</span>
-            <span>⚡ Entregas rápidas</span>
-        </div>
-
-        <div class="scarcity">
-            🔥 Oferta de lanzamiento · Solo para los primeros 3 restaurantes de Vigo
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tu comida es increíble.<br><span>El problema es que nadie lo sabe.</span></h1>
+            <p>Damos vida a tus platos con fotografía y video cinematográfico que multiplica tus reservas y transforma seguidores en clientes hambrientos.</p>
+            <a href="#packs" class="btn">Ver Packs & Precios</a>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #777;">*Solo aceptamos 3 nuevos restaurantes por mes.</p>
         </div>
     </section>
 
-    <!-- 2. SERVIÇOS -->
-    <section id="servicios">
-        <h2 class="section-title">Dejamos a tu competencia <span class="highlight">con hambre</span></h2>
-        <p class="section-subtitle">No hacemos fotos aburridas. Hacemos contenido diseñado 100% para conseguir reservas.</p>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">📱</div>
-                <h3>Reels y TikToks Virales</h3>
-                <p>Videos dinámicos, en tendencia y editados profesionalmente para captar la atención en los primeros 3 segundos. Mostramos la experiencia real de comer en tu local.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📸</div>
-                <h3>Fotografía Gastronómica</h3>
-                <p>Fotos que dan hambre. Iluminación profesional para que tus platos se vean exactamente igual de deliciosos en la pantalla que en la mesa.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🚀</div>
-                <h3>Gestión Visual</h3>
-                <p>Te entregamos el contenido listo para publicar, con textos atractivos y hashtags optimizados para la zona de Vigo y alrededores.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. COMO FUNCIONA -->
+    <!-- COMO FUNCIONA -->
     <section id="como-funciona">
-        <h2 class="section-title">Tu restaurante lleno, <span class="highlight">sin dolores de cabeza</span></h2>
-        <p class="section-subtitle">Un proceso diseñado para no interrumpir tu servicio.</p>
-        
+        <h2 class="section-title reveal">Un Proceso Sin Estrés</h2>
         <div class="grid">
-            <div class="card">
-                <div class="card-icon">1️⃣</div>
-                <h3>Reserva tu sesión</h3>
-                <p>Eliges el pack que mejor se adapta a ti. Agendamos un día y hora donde tu cocina esté más tranquila.</p>
+            <div class="card reveal">
+                <h3>1. Estrategia</h3>
+                <p style="color: var(--text-muted)">Analizamos tu marca, tu menú y creamos un moodboard exclusivo. Nada es al azar, todo está pensado para vender.</p>
             </div>
-            <div class="card">
-                <div class="card-icon">2️⃣</div>
-                <h3>Acción (Nosotros nos encargamos)</h3>
-                <p>Vamos a tu restaurante con nuestro equipo. Grabamos, hacemos fotos y captamos la esencia del lugar en menos de 2 horas.</p>
+            <div class="card reveal" style="transition-delay: 0.1s;">
+                <h3>2. Producción</h3>
+                <p style="color: var(--text-muted)">Invadimos tu restaurante con luz de cine. No interrumpimos tu servicio; creamos arte gastronómico en tiempo récord.</p>
             </div>
-            <div class="card">
-                <div class="card-icon">3️⃣</div>
-                <h3>Empieza a recibir clientes</h3>
-                <p>Te entregamos todo el material editado y optimizado. Tú solo publicas y respondes las reservas.</p>
+            <div class="card reveal" style="transition-delay: 0.2s;">
+                <h3>3. Entrega</h3>
+                <p style="color: var(--text-muted)">En menos de 72h recibes el material editado, listo para subir, dar hambre y generar reservas automáticas.</p>
             </div>
         </div>
     </section>
 
-    <!-- 4. PACKS / PREÇOS -->
+    <!-- PACKS (PRICING) -->
     <section id="packs">
-        <h2 class="section-title">Planes simples, <span class="highlight">resultados claros</span></h2>
-        <p class="section-subtitle">Elige el combustible que tu restaurante necesita hoy.</p>
-        
+        <h2 class="section-title reveal">Inversión en tu Imagen</h2>
         <div class="grid">
+            
             <!-- Pack 1 -->
-            <div class="card pack-card">
-                <h3>El Entrante</h3>
-                <p>Para locales que quieren probar el impacto del buen contenido.</p>
-                <div class="price">€290 <span>/mes</span></div>
+            <div class="card reveal">
+                <h3>Starter</h3>
+                <div class="price">€290<span>/sesión</span></div>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Ideal para renovar el menú en apps de delivery y redes sociales.</p>
                 <ul class="features">
-                    <li>✔️ 1 Sesión de grabación (1.5 hrs)</li>
-                    <li>✔️ 4 Reels / TikToks editados</li>
-                    <li>✔️ 10 Fotos en alta calidad</li>
-                    <li>✔️ Ideas y guiones incluidos</li>
+                    <li>Sesión de 2 horas</li>
+                    <li>15 Fotos en Alta Resolución</li>
+                    <li>Retoque profesional de alimentos</li>
+                    <li>Entrega en 72 horas</li>
                 </ul>
-                <a href="#contacto" class="btn-primary btn-full" style="animation: none;">Elegir Entrante</a>
+                <a href="#contacto" class="btn" style="width: 100%; text-align: center; background: transparent; border: 1px solid var(--primary); color: var(--primary); box-shadow: none;">Elegir Starter</a>
             </div>
 
             <!-- Pack 2 (Destaque) -->
-            <div class="card pack-card highlight">
-                <div class="badge">EL MÁS POPULAR</div>
-                <h3>Plato Principal</h3>
-                <p>Crecimiento constante para dominar las redes en Vigo.</p>
-                <div class="price">€490 <span>/mes</span></div>
+            <div class="card reveal" style="border-color: var(--primary); transform: scale(1.05); z-index: 10;">
+                <div class="popular-badge">MÁS VENDIDO</div>
+                <h3>Growth Visual</h3>
+                <div class="price">€490<span>/sesión</span></div>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">El arsenal completo para dominar Instagram y TikTok.</p>
                 <ul class="features">
-                    <li>✔️ 2 Sesiones de grabación al mes</li>
-                    <li>✔️ 8 Reels / TikToks de alto impacto</li>
-                    <li>✔️ 20 Fotos en alta calidad</li>
-                    <li>✔️ Textos listos para publicar (Copywriting)</li>
-                    <li>✔️ Soporte prioritario por WhatsApp</li>
+                    <li>Sesión de 4 horas</li>
+                    <li>30 Fotos en Alta Resolución</li>
+                    <li>3 Reels / TikToks editados</li>
+                    <li>Dirección de arte incluida</li>
+                    <li>Entrega prioritaria (48h)</li>
                 </ul>
-                <a href="#contacto" class="btn-primary btn-full">Quiero llenar mi local</a>
+                <a href="#contacto" class="btn" style="width: 100%; text-align: center;">Elegir Growth</a>
             </div>
 
             <!-- Pack 3 -->
-            <div class="card pack-card">
-                <h3>Menú Degustación</h3>
-                <p>Delega el 100%. Nosotros gestionamos todo el contenido.</p>
-                <div class="price">A consultar</div>
+            <div class="card reveal">
+                <h3>Premium / Cadenas</h3>
+                <div class="price">Custom<span></span></div>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Para restaurantes con múltiples locales o campañas publicitarias.</p>
                 <ul class="features">
-                    <li>✔️ Sesiones ilimitadas según necesidad</li>
-                    <li>✔️ Gestión de comunidad y respuestas</li>
-                    <li>✔️ Publicación automática</li>
-                    <li>✔️ Estrategia de anuncios (Ads)</li>
+                    <li>Día completo de rodaje</li>
+                    <li>Video cinematográfico</li>
+                    <li>Actores / Modelos de manos</li>
+                    <li>Derechos comerciales totales</li>
                 </ul>
-                <a href="#contacto" class="btn-primary btn-full" style="background: transparent; border: 1px solid var(--text-muted); animation: none; color: white;">Hablar por WhatsApp</a>
+                <a href="#contacto" class="btn" style="width: 100%; text-align: center; background: transparent; border: 1px solid var(--primary); color: var(--primary); box-shadow: none;">Hablar con Ventas</a>
             </div>
+
         </div>
     </section>
 
-    <!-- 5. FAQ -->
-    <section id="faq">
-        <h2 class="section-title">Preguntas <span class="highlight">Frecuentes</span></h2>
-        <p class="section-subtitle">Resolvemos tus dudas rápido, sabemos que tienes mesas que atender.</p>
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/34XXXXXXXXX" class="float-wa" target="_blank">
+        <!-- Ícone SVG do WhatsApp -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // 1. Lógica do Preloader (Entrada Elegante)
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 1000);
+            }, 1200); // Tempo que a tela preta com texto digitando fica na tela
+        });
+
+        // 2. Mudança no Header ao "Scrollar"
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '15px 5%';
+                header.style.background = 'rgba(7, 7, 7, 0.85)';
+            } else {
+                header.style.padding = '20px 5%';
+                header.style.background = 'rgba(7, 7, 7, 0.6)';
+            }
+        });
+
+        // 3. Animações de Scroll (Reveal Elements)
+        const revealElements = document.querySelectorAll('.reveal');
         
-        <div style="max-width: 800px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color);">
-            <div class="faq-item">
-                <h4>¿Tengo que cerrar el restaurante para que graben?</h4>
-                <p>No, en absoluto. Nos adaptamos a tus horarios. Preferimos grabar en momentos de baja afluencia, pero también capturamos "el caos hermoso" de un servicio si así lo requiere la estrategia.</p>
-            </div>
-            <div class="faq-item">
-                <h4>¿Cuánto tardan en entregar los videos y fotos?</h4>
-                <p>Somos rápidos. Tendrás el primer lote de contenido editado y listo para publicar en un plazo máximo de 48 a 72 horas laborables después de la sesión de grabación.</p>
-            </div>
-            <div class="faq-item">
-                <h4>¿Hay contrato de permanencia?</h4>
-                <p>No. Creemos que te quedarás con nosotros por los resultados, no porque un papel te obligue. Pagas mes a mes y puedes cancelar cuando lo decidas.</p>
-            </div>
-        </div>
-    </section>
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Anima apenas uma vez
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1, // Dispara quando 10% do elemento aparece
+            rootMargin: "0px 0px -50px 0px"
+        });
 
-    <!-- 6. FOOTER / CONTACTO -->
-    <footer id="contacto">
-        <div class="footer-content">
-            <h2 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -1px;">¿Listo para hacer que tu <span class="highlight">comida brille</span>?</h2>
-            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.2rem;">Hablemos. Sin compromiso. Solo resultados.</p>
-            <a href="mailto:hola@listoaquimedia.com" class="btn-primary" style="animation: none;">Enviar un mensaje &rarr;</a>
-            
-            <p style="margin-top: 60px; color: var(--text-muted); font-size: 0.9rem;">
-                © 2026 LISTO.AQUÍ MEDIA. Creado para restaurantes de Vigo.<br>
-                Gabriel | Creador de Contenido
-            </p>
-        </div>
-    </footer>
-
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
