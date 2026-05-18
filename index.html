@@ -301,7 +301,7 @@ section:not(.hero) {
    ESTILOS DO ANTES E DEPOIS
 ========================================= */
 .comprovacao {
-  background-color: transparent; /* Puxa o fundo do site naturalmente */
+  background-color: transparent; 
 }
 .antes-depois-container {
   position: relative;
@@ -315,13 +315,9 @@ section:not(.hero) {
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   border: 1px solid var(--card-border);
   cursor: ew-resize; 
+  touch-action: pan-y; /* Permite rolar a tela pra cima/baixo, mas captura os deslizes laterais */
 }
-.antes-depois-container:hover .imagem-antes {
-  width: 0%; 
-}
-.antes-depois-container:hover .slider-divisor {
-  left: 0%;
-}
+
 .imagem-antes, .imagem-depois {
   position: absolute;
   top: 0;
@@ -335,7 +331,6 @@ section:not(.hero) {
 .imagem-antes {
   width: 50%; 
   z-index: 2;
-  transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
   border-right: 2px solid var(--primary);
 }
 .imagem-antes::before {
@@ -378,8 +373,7 @@ section:not(.hero) {
   background-color: var(--primary);
   z-index: 3;
   transform: translateX(-50%);
-  transition: left 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-  pointer-events: none;
+  pointer-events: none; /* Garante que o toque/click pegue o container por baixo */
 }
 .slider-botao {
   position: absolute;
@@ -542,7 +536,7 @@ footer {
 <section id="comprovacao" class="comprovacao">
   <div class="section-title reveal">
     <h2>El cambio que tu cliente <span style="color: var(--primary);">nota al instante</span></h2>
-    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Pasa el ratón (o toca) para ver la diferencia entre un menú invisible y uno que vende solo.</p>
+    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Arrastra para ver la diferencia entre un menú invisible y uno que vende solo.</p>
   </div>
 
   <div class="antes-depois-container reveal">
@@ -749,6 +743,39 @@ if (window.innerWidth > 768) {
   document.addEventListener('mouseleave', () => {
     videoFoco.style.transform = 'translate(-50%, -50%)';
   });
+}
+
+// ==========================================
+// MOTOR DO SLIDER ANTES E DEPOIS (MOBILE E DESKTOP)
+// ==========================================
+const containerSlider = document.querySelector('.antes-depois-container');
+const imgAntes = document.querySelector('.imagem-antes');
+const divisor = document.querySelector('.slider-divisor');
+
+if (containerSlider && imgAntes && divisor) {
+  const moverSlider = (e) => {
+    // Captura a posição do mouse ou do dedo no touch
+    let clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+    
+    // Calcula a posição dentro do container
+    let rect = containerSlider.getBoundingClientRect();
+    let x = clientX - rect.left;
+    
+    // Converte para porcentagem (limitando entre 0% e 100%)
+    let porcentagem = (x / rect.width) * 100;
+    if (porcentagem < 0) porcentagem = 0;
+    if (porcentagem > 100) porcentagem = 100;
+    
+    // Aplica a nova largura na imagem e a nova posição na linha
+    imgAntes.style.width = `${porcentagem}%`;
+    divisor.style.left = `${porcentagem}%`;
+  };
+
+  // DESKTOP: Acompanha o movimento do mouse sem precisar clicar
+  containerSlider.addEventListener('mousemove', moverSlider);
+  
+  // MOBILE: Acompanha o deslize do dedo na tela
+  containerSlider.addEventListener('touchmove', moverSlider, { passive: true });
 }
 </script>
 
