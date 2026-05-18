@@ -140,7 +140,7 @@ section.hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px; /* O padding-top será injetado dinamicamente via JS para evitar sobreposição */
+  padding: 0 20px;
   position: relative;
   overflow: hidden;
   background-color: var(--bg-dark);
@@ -297,6 +297,106 @@ section:not(.hero) {
   letter-spacing: 1px;
 }
 
+/* =========================================
+   ESTILOS DO ANTES E DEPOIS
+========================================= */
+.comprovacao {
+  background-color: transparent; /* Puxa o fundo do site naturalmente */
+}
+.antes-depois-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 60vh;
+  min-height: 450px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border: 1px solid var(--card-border);
+  cursor: ew-resize; 
+}
+.antes-depois-container:hover .imagem-antes {
+  width: 0%; 
+}
+.antes-depois-container:hover .slider-divisor {
+  left: 0%;
+}
+.imagem-antes, .imagem-depois {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.imagem-antes {
+  width: 50%; 
+  z-index: 2;
+  transition: width 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  border-right: 2px solid var(--primary);
+}
+.imagem-antes::before {
+  content: "ANTES";
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.imagem-depois {
+  z-index: 1;
+}
+.imagem-depois::after {
+  content: "DESPUÉS";
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 15px rgba(255,87,34,0.4);
+}
+.slider-divisor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: var(--primary);
+  z-index: 3;
+  transform: translateX(-50%);
+  transition: left 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+.slider-botao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
+  color: white;
+}
+
 /* Botão do WhatsApp Flutuante */
 .float-wa {
   position: fixed;
@@ -347,33 +447,25 @@ footer {
    ========================================= */
 @media(max-width: 768px){
   section.hero {
-    height: 100svh; /* Devolvemos o tamanho total da tela */
+    height: 100svh; 
     min-height: 600px;
   }
-
-  /* 🎬 TRUQUE CINEMATOGRÁFICO: Enquadramento e Máscara */
   .video-fundo {
-    min-height: unset; /* Removemos a obrigação de preencher a tela inteira verticalmente */
-    height: 60vh; /* O vídeo fica mais "horizontal", reduzindo drasticamente o zoom */
-    top: 55%; /* Desloca levemente para baixo para fugir do menu */
-    
-    /* Esta máscara dissolve o topo e a base do vídeo, fundindo-os no preto do fundo */
+    min-height: unset; 
+    height: 60vh; 
+    top: 55%; 
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   }
-
-  /* Ajustamos a cortina de sombra para não pesar na máscara */
   section.hero::after {
     background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
   }
-
   h1 { font-size: 2.2rem; }
   
   header {
     flex-wrap: wrap;
     padding: 12px 5%;
   }
-  
   nav {
     order: 3; 
     width: 100%;
@@ -382,23 +474,28 @@ footer {
     gap: 15px;
     margin-top: 10px;
   }
-  
   nav a {
     margin-left: 0;
     font-size: 0.85rem;
   }
-  
   .btn {
     padding: 12px 20px;
     font-size: 0.9rem;
   }
-
   .banner-promo {
     font-size: 0.75rem;
     padding: 10px 15px;
   }
+  .imagem-antes::before, .imagem-depois::after {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    top: 15px;
+  }
+  .antes-depois-container {
+    height: 40vh;
+    min-height: 300px;
+  }
 }
-
 </style>
 </head>
 <body>
@@ -423,19 +520,15 @@ footer {
 
 <!-- Hero Section -->
 <section class="hero">
-  
-  <!-- VÍDEO DE FUNDO -->
   <video autoplay muted loop playsinline class="video-fundo">
     <source src="video-hanburguer-site.mp4" type="video/mp4" />
   </video>
 
-  <!-- FAIXA DE LANÇAMENTO (Com classe CSS própria) -->
   <div id="banner-lanzamiento" class="banner-promo">
     <strong>Lanzamiento Exclusivo</strong> en Galicia &nbsp;·&nbsp;
     Solo <strong>3 plazas</strong> para locales pioneros
   </div>
 
-  <!-- TEXTOS E BOTÃO -->
   <div class="hero-content">
     <h1>Tu comida es increíble.<br><span>El problema es que nadie lo sabe.</span></h1>
     <p>El 90% de los clientes decide dónde comer antes de salir de casa. ¿Qué ven cuando buscan tu restaurante?</p>
@@ -443,7 +536,31 @@ footer {
   </div>
 </section>
 
-  
+<!-- ==========================================
+     SECCIÓN COMPROBACIÓN (ANTES Y DESPUÉS)
+=========================================== -->
+<section id="comprovacao" class="comprovacao">
+  <div class="section-title reveal">
+    <h2>El cambio que tu cliente <span style="color: var(--primary);">nota al instante</span></h2>
+    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Pasa el ratón (o toca) para ver la diferencia entre un menú invisible y uno que vende solo.</p>
+  </div>
+
+  <div class="antes-depois-container reveal">
+    <!-- Imagem do DEPOIS (Coloque o nome do seu arquivo aqui) -->
+    <div class="imagem-depois" style="background-image: url('CAMINHO_DA_SUA_IMAGEM_DEPOIS.jpg');"></div>
+    
+    <!-- Imagem do ANTES (Coloque o nome do seu arquivo aqui) -->
+    <div class="imagem-antes" style="background-image: url('CAMINHO_DA_SUA_IMAGEM_ANTES.jpg');"></div>
+    
+    <!-- Barra divisória central -->
+    <div class="slider-divisor">
+      <div class="slider-botao">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3"/><path d="M16 15l4-3-4-3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="como-funciona">
   <h2 class="section-title reveal">Listo en 72h. Sin cerrar. Sin complicaciones.</h2>
   <div class="grid">
@@ -594,26 +711,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (header && banner && hero) {
     const ajustarEspacos = () => {
-      // 1. Pega as alturas exatas no milissegundo atual
       const headerHeight = header.offsetHeight;
       const bannerHeight = banner.offsetHeight;
       
-      // 2. Gruda a faixa exatamente na base do header
       banner.style.top = headerHeight + 'px';
-      
-      // 3. Adiciona um "preenchimento" no topo do container de Vídeo (Hero).
-      // Isso empurra a centralização do texto "Tu comida..." para baixo de forma segura,
-      // garantindo que ele NUNCA encoste na faixa ou no header, seja no Desktop ou no Celular.
       hero.style.paddingTop = (headerHeight + bannerHeight) + 'px';
     };
 
-    // ResizeObserver é infalível: se o menu no celular quebrar de linha ou a fonte demorar a carregar,
-    // ele detecta a mudança de tamanho na mesma hora e roda a função de ajuste.
     const observer = new ResizeObserver(ajustarEspacos);
     observer.observe(header);
     observer.observe(banner);
     
-    // Chamada inicial
     ajustarEspacos();
   }
 });
