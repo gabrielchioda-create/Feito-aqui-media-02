@@ -32,6 +32,19 @@ body {
   color: var(--text-light);
   overflow-x: hidden;
 }
+/* Efeito de Textura Premium de Cinema */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04; /* Mantém o efeito super sutil e elegante */
+    pointer-events: none; /* Garante que os botões do site continuem clicáveis */
+    z-index: 9999; /* Coloca a textura por cima de tudo */
+}
 
 /* Fundo animado discreto */
 .fundo-animado {
@@ -533,7 +546,7 @@ footer {
 
 <!-- Hero Section -->
 <section class="hero">
-  <video autoplay muted loop playsinline class="video-fundo">
+  <video autoplay muted loop playsinline class="video-fundo" poster="Imagem-rapida-background" preload="metadata">
     <source src="video-hanburguer-site.mp4" type="video/mp4" />
   </video>
 
@@ -619,7 +632,7 @@ footer {
         <li>En tus manos en 72h — publica este fin de semana</li>
       </ul>
       <p style="color:#FF5722;font-size:0.8rem;font-weight:700; margin-bottom:15px;text-align:center;">
-        ⚡ Solo 2 plazas disponibles en mayo
+        ⚡ Últimas 3 plazas para este mes
       </p>
       <a class="btn" href="https://wa.me/34692231872?text=Hola%2C%20vi%20el%20pack%20Starter%20y%20me%20interesa.%20%C2%BFTodav%C3%ADa%20hay%20disponibilidad%20esta%20semana%3F" target="_blank">Elegir</a>
     </div>
@@ -636,7 +649,7 @@ footer {
         <li>Entrega express 48h — antes que tu competencia</li>
       </ul>
       <p style="color:#FF5722;font-size:0.8rem;font-weight:700; margin-bottom:15px;text-align:center;">
-        ⚡ Solo 2 plazas disponibles en mayo
+        ⚡ 1 plaza restante para esta semana
       </p>
       <a class="btn" href="https://wa.me/34692231872?text=Hola%2C%20quiero%20el%20Growth%20Visual.%20%C2%BFCu%C3%A1ndo%20podr%C3%ADamos%20hacer%20la%20sesi%C3%B3n%3F" target="_blank">Elegir Growth</a>
     </div>
@@ -652,7 +665,7 @@ footer {
         <li>Derechos totales — tuyo para siempre</li>
       </ul>
       <p style="color:#FF5722;font-size:0.8rem;font-weight:700; margin-bottom:15px;text-align:center;">
-        ⚡ Solo 2 plazas disponibles en mayo
+        ⚡ Solo aceptamos 2 proyectos al mes
       </p>
       <a class="btn" href="https://wa.me/34692231872?text=Hola%2C%20tengo%20un%20proyecto%20m%C3%A1s%20grande%20y%20quiero%20hablar%20con%20alguien%20del%20equipo.%20%C2%BFCu%C3%A1ndo%20puedo%20llamar%3F" target="_blank">Hablar con Ventas</a>
     </div>
