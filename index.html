@@ -8,7 +8,7 @@
 <style>
 :root {
   --bg-dark: #070707;
-  --card-bg: rgba(255, 255, 255, 0.03);f
+  --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.08);
   --primary: #FF5722;
   --primary-hover: #F44336;
@@ -32,6 +32,7 @@ body {
   color: var(--text-light);
   overflow-x: hidden;
 }
+
 /* Efeito de Textura Premium de Cinema */
 body::before {
     content: "";
@@ -41,9 +42,9 @@ body::before {
     width: 100vw;
     height: 100vh;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.04; /* Mantém o efeito super sutil e elegante */
-    pointer-events: none; /* Garante que os botões do site continuem clicáveis */
-    z-index: 9999; /* Coloca a textura por cima de tudo */
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999;
 }
 
 /* Fundo animado discreto */
@@ -310,118 +311,12 @@ section:not(.hero) {
   letter-spacing: 1px;
 }
 
-/* =========================================
-   ESTILOS DO NOVO SLIDER ANTES E DEPOIS
-========================================= */
+/* Container da Vitrine */
 .comprovacao {
   background-color: transparent; 
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.image-slider-container {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  aspect-ratio: 16/9; 
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  border: 1px solid var(--card-border);
-  --position: 50%; 
-}
-
-.image-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.image-layer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center; /* Garante que as imagens fiquem ancoradas no mesmo ponto */
-  display: block;
-  pointer-events: none; 
-}
-
-/* O corte mágico: A imagem não muda de tamanho, apenas é mascarada */
-.before-image {
-  z-index: 2;
-  clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
-}
-
-/* LABELS (Tags Antes e Depois) */
-.label {
-  position: absolute;
-  top: 30px;
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-weight: 800;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  z-index: 3;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-.label-before {
-  left: 30px;
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-}
-.label-after {
-  right: 30px;
-  background: var(--primary);
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(255,87,34,0.4);
-}
-
-/* O CONTROLE INVISÍVEL */
-.slider-control {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; 
-  cursor: ew-resize; 
-  z-index: 4; 
-  margin: 0;
-}
-
-/* A LINHA COM A SETINHA */
-.slider-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: var(--position);
-  width: 2px;
-  background-color: var(--primary);
-  z-index: 3;
-  transform: translateX(-50%);
-  pointer-events: none; 
-}
-
-.slider-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
 }
 
 /* Botão do WhatsApp Flutuante */
@@ -471,7 +366,7 @@ footer {
 
 /* =========================================
    RESPONSIVIDADE (Correções Mobile)
-   ========================================= */
+========================================= */
 @media(max-width: 768px){
   section.hero {
     height: 100svh; 
@@ -513,16 +408,9 @@ footer {
     font-size: 0.75rem;
     padding: 10px 15px;
   }
-  /* Correções do Slider para Mobile */
-  .label {
-    font-size: 0.7rem;
-    padding: 5px 12px;
-    top: 15px;
-  }
-  .label-before { left: 15px; }
-  .label-after { right: 15px; }
 }
-/* Passo 4: Animação Orgânica (Batimento Cardíaco) para o Botão */
+
+/* Animação Orgânica (Batimento Cardíaco) */
 @keyframes pulso-organico {
     0% { 
         transform: scale(1); 
@@ -537,28 +425,29 @@ footer {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); 
     }
 }
-
-/* Classe mágica que você vai adicionar ao botão */
 .btn-pulsante {
     animation: pulso-organico 2.5s infinite ease-in-out;
 }
-  /* Estilos do Ghost Slide */
+
+/* =========================================
+   GHOST SLIDER (CSS)
+========================================= */
 .ghost-slider-container {
     position: relative;
     width: 100%;
-    max-width: 900px; /* Tamanho máximo do quadro */
-    aspect-ratio: 16/9; /* Mantém a proporção de tela */
+    max-width: 900px; 
+    aspect-ratio: 16/9; 
     margin: 60px auto;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    cursor: ew-resize; /* Muda o cursor do mouse */
+    cursor: ew-resize; 
 }
 
 .img-antes, .img-depois {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem não amasse */
+    object-fit: cover; 
     position: absolute;
     top: 0;
     left: 0;
@@ -569,7 +458,7 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%; /* Começa exatamente no meio */
+    width: 50%;
     height: 100%;
     overflow: hidden;
     border-right: 2px solid rgba(255, 255, 255, 0.7);
@@ -584,7 +473,7 @@ footer {
     width: 50px;
     height: 50px;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px); /* Efeito de vidro da Apple */
+    backdrop-filter: blur(8px);
     border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     display: flex;
@@ -594,10 +483,9 @@ footer {
     font-weight: bold;
     font-family: monospace;
     z-index: 3;
-    pointer-events: none; /* O truque pro mouse ignorar o botão e focar no container */
+    pointer-events: none;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-
 </style>
 </head>
 <body>
@@ -639,7 +527,7 @@ footer {
 </section>
 
 <!-- ==========================================
-     SECCIÓN COMPROBACIÓN (NOVO GHOST SLIDER)
+     SECCIÓN COMPROBACIÓN (GHOST SLIDER)
 =========================================== -->
 <section id="comprovacao" class="comprovacao">
   <div class="section-title reveal">
@@ -647,7 +535,6 @@ footer {
     <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Pasa el cursor o el dedo para ver la diferencia.</p>
   </div>
 
-  <!-- Passo 5: O Ghost Slide Interativo -->
   <div class="ghost-slider-container reveal" id="ghostSlider">
       <!-- Imagem do ANTES (Fica no fundo) -->
       <img src="midia-antes.png" alt="Menú Antes" class="img-antes">
@@ -663,7 +550,6 @@ footer {
       </div>
   </div>
 </section>
-
 
 <section id="como-funciona">
   <h2 class="section-title reveal">Listo en 72h. Sin cerrar. Sin complicaciones.</h2>
@@ -794,6 +680,7 @@ footer {
   Listo.aqui © 2024. Todos los derechos reservados.
 </footer>
 
+<!-- SCRIPT ÚNICO CONSOLIDADO E CORRIGIDO -->
 <script>
 // Ocultar/mostrar menu ao rolar
 window.addEventListener('scroll', () => {
@@ -807,7 +694,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// NOVO SISTEMA DE POSICIONAMENTO DA FAIXA E PREVENÇÃO DE SOBREPOSIÇÃO
+// Posicionamento da faixa promo sem sobreposição
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById('header');
   const banner = document.getElementById('banner-lanzamiento');
@@ -842,7 +729,7 @@ const observerScroll = new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 elementosRevelar.forEach(el => observerScroll.observe(el));
 
-// Parallax
+// Parallax sutil do vídeo
 const videoFoco = document.querySelector('.video-fundo');
 if (window.innerWidth > 768) {
   document.addEventListener('mousemove', e => {
@@ -855,10 +742,7 @@ if (window.innerWidth > 768) {
   });
 }
 
-<!-- ==========================================
-     MOTOR DO GHOST SLIDER (JAVASCRIPT)
-=========================================== -->
-<script>
+// MOTOR DO NOVO GHOST SLIDER INTERATIVO
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.getElementById('ghostSlider');
     const wrapper = document.getElementById('ghostWrapper');
